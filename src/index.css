@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
+  
+  #root {
+    min-height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Typography scale dengan Poppins */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    font-weight: 800;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 700;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+    font-weight: 600;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+    font-weight: 600;
+  }
+  
+  h5 {
+    @apply text-lg md:text-xl lg:text-2xl;
+    font-weight: 500;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg lg:text-xl;
+    font-weight: 500;
+  }
+  
+  p, span, div, a, button, input, textarea {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-thin {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+  }
+  
+  .font-light {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+  }
+  
+  .font-normal {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  .font-medium {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+  
+  .font-semibold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-bold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-extrabold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+  }
+  
+  .font-black {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 dark:bg-gray-900/30;
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl;
+  }
+  
+  /* Typography utility classes untuk Poppins */
+  .text-display {
+    @apply text-5xl md:text-6xl lg:text-7xl font-black;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-subheading {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-body-large {
+    @apply text-lg md:text-xl lg:text-2xl font-normal;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg lg:text-xl font-normal;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-body-small {
+    @apply text-sm md:text-base lg:text-lg font-normal;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-caption {
+    @apply text-xs md:text-sm lg:text-base font-light;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5),
+                 0 0 20px rgba(168, 85, 247, 0.3),
+                 0 0 30px rgba(168, 85, 247, 0.1);
+  }
+  
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Font smoothing untuk Poppins */
+  .font-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Letter spacing untuk Poppins */
+  .tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+  
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .tracking-normal {
+    letter-spacing: 0;
+  }
+  
+  .tracking-wide {
+    letter-spacing: 0.025em;
+  }
+  
+  .tracking-wider {
+    letter-spacing: 0.05em;
+  }
+  
+  .tracking-widest {
+    letter-spacing: 0.1em;
+  }
+}
+
