@@ -17,7 +17,6 @@
     "axios": "^1.13.4",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.29.2",
-    "particles.js": "^2.0.0",
     "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
