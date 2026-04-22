@@ -18,7 +18,7 @@ import {
 const AboutMe = () => {
   const [showPreview, setShowPreview] = useState(false);
 
-  const cvPath = "/cv/cv-fakhrizal.pdf"; // Sesuaikan dengan nama file CV Anda
+  const cvPath = "/cv/CV - MUHAMMAD FAKHRIZAL GARNINDYO.pdf"; // Sesuaikan dengan nama file CV Anda
 
   const interests = [
     { name: "Web Development", icon: <FiCode className="mr-1" /> },
