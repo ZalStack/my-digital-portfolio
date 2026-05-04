@@ -33,7 +33,7 @@ const AboutMe = () => {
     // Membuat link sementara untuk download
     const link = document.createElement("a");
     link.href = cvPath;
-    link.download = "CV_Muhammad_Fakhrizal_Garnindyo.pdf"; // Nama file saat didownload
+    link.download = ""; 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -148,12 +148,8 @@ const AboutMe = () => {
               </h1>
 
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-justify">
-                A passionate frontend developer with expertise in React.js and
-                modern web technologies. I specialize in creating beautiful,
-                responsive, and user-friendly interfaces that deliver
-                exceptional digital experiences. With a keen eye for design and
-                attention to detail, I bridge the gap between functionality and
-                aesthetics.
+                A passionate Software Engineer and Fullstack Developer with strong expertise in both frontend and backend development using modern web technologies. Experienced in building scalable, responsive, and user-friendly web applications, while also ensuring robust system architecture and performance. Actively involved in cybersecurity communities and academic environments, combining technical expertise with leadership, communication, and problem-solving skills.
+
               </p>
 
               <div className="mb-8">
