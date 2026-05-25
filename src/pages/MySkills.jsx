@@ -21,11 +21,11 @@ const MySkills = () => {
       title: "Backend Development",
       icon: <FiServer className="text-purple-500" size={24} />,
       skills: [
-        { name: 'Node.js', level: 78, color: 'from-green-600 to-emerald-600' },
-        { name: 'Express.js', level: 80, color: 'from-gray-500 to-gray-700' },
-        { name: 'Laravel', level: 78, color: 'from-red-500 to-orange-500' },
-        { name: 'PHP', level: 80, color: 'from-indigo-500 to-purple-500' },
-        { name: 'Python', level: 75, color: 'from-blue-500 to-cyan-500' },
+        { name: 'Node.js', level: 85, color: 'from-green-600 to-emerald-600' },
+        { name: 'Express.js', level: 85, color: 'from-gray-500 to-gray-700' },
+        { name: 'Laravel', level: 85, color: 'from-red-500 to-orange-500' },
+        { name: 'PHP', level: 85, color: 'from-indigo-500 to-purple-500' },
+        { name: 'Python', level: 80, color: 'from-blue-500 to-cyan-500' },
         { name: 'Golang', level: 70, color: 'from-sky-500 to-blue-500' },
       ]
     },
