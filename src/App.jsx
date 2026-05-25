@@ -22,7 +22,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-sans antialiased">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Welcome />} />
@@ -34,8 +34,6 @@ function App() {
         <Route path="/skills" element={<MySkills />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/certificate" element={<Certificate />} />
-        
-        {/* Fallback route */}
         <Route path="*" element={<Welcome />} />
       </Routes>
     </div>

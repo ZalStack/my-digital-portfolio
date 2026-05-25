@@ -1,40 +1,40 @@
 import React, { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { ReactTyped } from "react-typed"
+import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
-import particlesConfig from "../../config/particles-config"
+import { FiUser, FiArrowRight, FiCode, FiDatabase, FiLayout, FiServer } from "react-icons/fi"
 
 const Welcome = () => {
+  const [showInput, setShowInput] = useState(false)
   const [showButton, setShowButton] = useState(false)
   const [userName, setUserName] = useState("")
-  const [showInput, setShowInput] = useState(false)
-  const [particlesInitialized, setParticlesInitialized] = useState(false)
+  const [currentRole, setCurrentRole] = useState(0)
   const navigate = useNavigate()
 
-  useEffect(() => {
-    // Initialize particles.js
-    if (window.particlesJS && !particlesInitialized) {
-      try {
-        window.particlesJS("particles-js", particlesConfig)
-        setParticlesInitialized(true)
-      } catch (error) {
-        console.error("Error initializing particles.js:", error)
-      }
-    }
+  const roles = [
+    { title: "Software Engineer", icon: <FiCode /> },
+    { title: "Fullstack Developer", icon: <FiServer /> },
+    { title: "UI/UX Designer", icon: <FiLayout /> },
+    { title: "Tech Enthusiast", icon: <FiDatabase /> },
+  ]
 
-    // Show input after 4 seconds
-    const timer1 = setTimeout(() => setShowInput(true), 4000)
-    // Show button after 5 seconds
-    const timer2 = setTimeout(() => setShowButton(true), 5000)
+  useEffect(() => {
+    const timer1 = setTimeout(() => setShowInput(true), 2000)
+    const timer2 = setTimeout(() => setShowButton(true), 3500)
+    
+    // Rotate roles
+    const roleInterval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length)
+    }, 2500)
 
     return () => {
       clearTimeout(timer1)
       clearTimeout(timer2)
+      clearInterval(roleInterval)
     }
-  }, [particlesInitialized])
+  }, [roles.length])
 
   const handleEnter = () => {
-    if (userName.trim() || !showInput) {
+    if (!showInput || userName.trim()) {
       navigate('/main', { state: { userName: userName.trim() || 'Guest' } })
     }
   }
@@ -46,113 +46,160 @@ const Welcome = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-      <div id="particles-js" className="absolute inset-0 z-0" />
-
-      <div className="absolute inset-0 z-1 bg-gradient-to-br from-transparent via-transparent to-transparent">
-        <div className="absolute top-0 left-0 w-full h-full animate-gradient-xy bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 opacity-20 mix-blend-overlay"></div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        {/* Dot Pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundSize: '30px 30px'
+          }}
+        ></div>
       </div>
 
-      <div className="z-10 text-center px-4 max-w-4xl mx-auto">
+      {/* Animated Orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+      {/* Content Container */}
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        {/* Welcome Badge */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
+          transition={{ duration: 0.5 }}
+          className="mb-6"
         >
-          <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 animate-text-gradient">
-            Hi, My Name is Muhammad Fakhrizal Garnindyo
-          </h1>
-          <div className="text-2xl md:text-4xl h-16 mb-8 font-medium text-white">
-            <ReactTyped
-              strings={[
-                "Frontend Developer",
-                "Backend Developer",
-                "UI Designer",
-                "UX Research",
-              ]}
-              typeSpeed={40}
-              backSpeed={30}
-              loop
-              cursorChar="▋"
-              showCursor={true}
-              className="text-shadow-glow"
-            />
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+            <span className="text-2xl">👋</span>
+            <span className="text-sm text-white/80">Welcome to My Digital Portfolio</span>
           </div>
         </motion.div>
 
-        {showInput && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="mb-6"
-          >
-            <input
-              type="text"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="What's your name?"
-              className="px-4 py-3 w-64 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder-white/50 text-center backdrop-blur-sm"
-              autoFocus
-            />
-          </motion.div>
-        )}
+        {/* Main Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="mb-4"
+        >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+            <span className="text-white">Muhammad </span>
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Fakhrizal
+            </span>
+          </h1>
+          <h2 className="text-white/70 text-lg sm:text-xl md:text-2xl mt-2">
+            Garnindyo
+          </h2>
+        </motion.div>
 
-        {showButton && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-              delay: 0.2,
-            }}
-          >
-            <button
-              onClick={handleEnter}
-              disabled={showInput && !userName.trim()}
-              className={`relative px-8 py-4 bg-transparent border-2 ${
-                showInput && !userName.trim()
-                  ? "border-white/10 cursor-not-allowed"
-                  : "border-white/30 hover:border-transparent"
-              } text-white text-lg font-semibold rounded-full overflow-hidden group transition-all duration-500`}
-              aria-label="Begin Exploration"
+        {/* Rotating Role */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mb-8"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentRole}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
             >
-              <span
-                className={`absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 opacity-0 ${
-                  !showInput || userName.trim() ? "group-hover:opacity-100" : ""
-                } transition-opacity duration-500 animate-gradient-x`}
-              ></span>
-
-              <span className="absolute inset-0 backdrop-blur-sm bg-white/5 group-hover:bg-white/10 transition-all duration-500"></span>
-
-              <span className="relative z-10 flex items-center justify-center">
-                Begin Exploration
-                <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
+              <span className="text-purple-400 text-xl">{roles[currentRole].icon}</span>
+              <span className="text-white text-lg sm:text-xl font-medium">
+                {roles[currentRole].title}
               </span>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
 
-              <span className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                <span className="absolute top-0 left-0 w-1/3 h-full bg-white/30 transform -skew-x-12 animate-shine group-hover:translate-x-[400%] transition-all duration-1000"></span>
-              </span>
-            </button>
-          </motion.div>
-        )}
+        {/* Tech Stack */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="flex flex-wrap justify-center gap-2 mb-10"
+        >
+          {["React.js", "Next.js", "Laravel", "Express.js", "TypeScript", "Python", "TailwindCSS", "MySQL"].map((tech, idx) => (
+            <span
+              key={idx}
+              className="px-3 py-1.5 bg-white/5 backdrop-blur-sm rounded-full text-white/50 text-xs sm:text-sm hover:bg-white/10 hover:text-white/70 transition-all duration-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </motion.div>
+
+        {/* Name Input */}
+        <AnimatePresence>
+          {showInput && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="mb-6"
+            >
+              <div className="relative max-w-sm mx-auto">
+                <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/40" size={18} />
+                <input
+                  type="text"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Enter your name"
+                  className="w-full px-12 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white placeholder-white/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                  autoFocus
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Enter Button */}
+        <AnimatePresence>
+          {showButton && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            >
+              <button
+                onClick={handleEnter}
+                disabled={showInput && !userName.trim()}
+                className={`group relative px-8 py-3 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 ${
+                  showInput && !userName.trim()
+                    ? "bg-white/10 text-white/30 cursor-not-allowed"
+                    : "bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 text-white hover:shadow-xl hover:shadow-purple-500/25"
+                }`}
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Enter Portfolio
+                  <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Motivational Quote */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4 }}
+          className="mt-10 text-white/30 text-xs sm:text-sm"
+        >
+          "Building innovative digital solutions with modern technology"
+        </motion.p>
       </div>
     </div>
   )

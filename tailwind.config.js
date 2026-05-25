@@ -1,64 +1,65 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+module.exports = {
   darkMode: 'class',
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/index.html"
+  ],
   theme: {
     extend: {
-      fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-        'sans': ['Poppins', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        'display': ['Poppins', 'system-ui', 'sans-serif'],
-        'body': ['Poppins', 'system-ui', 'sans-serif'],
-      },
       screens: {
-        'xs': '480px',
+        'xs': '475px',
       },
       animation: {
+        'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
-        'text-gradient': 'text-gradient 2s ease-in-out infinite alternate',
-        'shine': 'shine 2s ease-in-out infinite',
-        'float': 'float 3s ease-in-out infinite',
+        'text-gradient': 'text-gradient 3s ease infinite',
+        'shine': 'shine 1.5s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
       },
       keyframes: {
-        'gradient-xy': {
+        'gradient-x': {
           '0%, 100%': {
-            'background-size': '400% 400%',
-            'background-position': '0% 50%'
+            'background-size': '200% 200%',
+            'background-position': 'left center'
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': '100% 50%'
+            'background-position': 'right center'
+          }
+        },
+        'gradient-xy': {
+          '0%, 100%': {
+            'background-size': '400% 400%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '400% 400%',
+            'background-position': 'right center'
           }
         },
         'text-gradient': {
-          '0%': { 'background-position': '0% 50%' },
-          '100%': { 'background-position': '100% 50%' }
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          }
         },
         'shine': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(400%)' }
+          '0%': { transform: 'translateX(-100%) skewX(-12deg)' },
+          '100%': { transform: 'translateX(400%) skewX(-12deg)' }
         },
         'float': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' }
         }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      },
-      fontWeight: {
-        'thin': '300',
-        'light': '300',
-        'normal': '400',
-        'medium': '500',
-        'semibold': '600',
-        'bold': '700',
-        'extrabold': '800',
-        'black': '900',
       }
     },
   },

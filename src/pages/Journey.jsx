@@ -1,122 +1,127 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Layout from '../components/common/Layout'
-import { FiUsers, FiAward, FiCode, FiShield, FiGlobe, FiLayers } from 'react-icons/fi'
+import { FiBriefcase, FiAward, FiUsers, FiShield, FiCode, FiCalendar, FiMapPin } from 'react-icons/fi'
 
 const Journey = () => {
   const timeline = [
     {
+      year: '2025 - Present',
+      title: 'Fullstack Web Developer',
+      company: 'Parthaistic Digital Agency',
+      description: 'Developing Finance and HR Management System using Laravel, Livewire, Tailwind CSS, and MySQL. Implementing scalable backend architecture and financial management features.',
+      icon: <FiBriefcase />,
+      color: 'from-blue-500 to-cyan-500',
+      bgColor: 'bg-blue-50 dark:bg-blue-950/30',
+    },
+    {
+      year: '2025 - 2026',
+      title: 'Assistant Lecturer',
+      company: 'STT Nurul Fikri',
+      description: 'Teaching Assistant for Software Engineering course, guiding 3rd semester students in software development methodologies, system design, and practical implementations.',
+      icon: <FiUsers />,
+      color: 'from-purple-500 to-pink-500',
+      bgColor: 'bg-purple-50 dark:bg-purple-950/30',
+    },
+    {
+      year: '2025 - 2026',
+      title: 'UI Designer',
+      company: 'Student Identity Management App',
+      description: 'Designed UI/UX using Activity-Centered Design methodology for student identity management application.',
+      icon: <FiCode />,
+      color: 'from-amber-500 to-orange-500',
+      bgColor: 'bg-amber-50 dark:bg-amber-950/30',
+    },
+    {
+      year: '2025 - Present',
+      title: 'Core Team GDGoC',
+      company: 'STT NF Innovation Lab',
+      description: 'Building collaborative technology learning environment and facilitating backend development programs.',
+      icon: <FiShield />,
+      color: 'from-emerald-500 to-teal-500',
+      bgColor: 'bg-emerald-50 dark:bg-emerald-950/30',
+    },
+    {
+      year: '2025 - 2026',
+      title: 'HRD Staff',
+      company: 'Nurul Fikri Student Cybersecurity Community',
+      description: 'Managing recruitment, member development, and fostering positive organizational culture.',
+      icon: <FiUsers />,
+      color: 'from-rose-500 to-red-500',
+      bgColor: 'bg-rose-50 dark:bg-rose-950/30',
+    },
+    {
       year: '2024 - Present',
-      title: 'Freelancer Web Developer',
+      title: 'Freelance Fullstack Developer',
       company: 'Self-Employed',
-      description: 'Building responsive websites for clients using modern technologies.',
-      icon: <FiCode className="text-purple-600" size={18} />,
-      color: 'bg-purple-100 dark:bg-purple-900/30',
-      border: 'border-purple-500'
-    },
-    {
-      year: '2024 - Present',
-      title: 'Commite NFSSC',
-      company: 'Nurul Fikri Cyber Security',
-      description: 'Organized and supported cybersecurity-related events, workshops, and competitions for student engagement and learning.',
-      icon: <FiShield className="text-cyan-600" size={18} />,
-      color: 'bg-cyan-100 dark:bg-cyan-900/30',
-      border: 'border-cyan-500'
+      description: 'Building custom web applications using React.js, Next.js, Laravel, Express.js, and MySQL for various clients.',
+      icon: <FiCode />,
+      color: 'from-indigo-500 to-purple-500',
+      bgColor: 'bg-indigo-50 dark:bg-indigo-950/30',
     },
     {
       year: '2024',
-      title: 'International Python Certification',
-      company: 'Python Institute Academy',
-      description: 'Completed professional certification in Python programming covering core and advanced concepts.',
-      icon: <FiAward className="text-yellow-600" size={18} />,
-      color: 'bg-yellow-100 dark:bg-yellow-900/30',
-      border: 'border-yellow-500'
-    },
-    {
-      year: '2024',
-      title: 'Leadership Training',
-      company: 'LDKMKM STT NF',
-      description: 'Completed basic leadership and management training for college students.',
-      icon: <FiUsers className="text-blue-600" size={18} />,
-      color: 'bg-blue-100 dark:bg-blue-900/30',
-      border: 'border-blue-500'
-    },
-    {
-      year: '2024',
-      title: 'General Election Witness',
-      company: 'Indonesian General Election',
-      description: 'Served as an official witness for the presidential and vice-presidential election process.',
-      icon: <FiGlobe className="text-red-600" size={18} />,
-      color: 'bg-red-100 dark:bg-red-900/30',
-      border: 'border-red-500'
-    },
-    {
-      year: '2020 - 2023',
-      title: 'OSIS MPK Member',
-      company: 'SMA Citra Nusa',
-      description: 'Active member of student council organization, participating in event planning and school activities.',
-      icon: <FiLayers className="text-green-600" size={18} />,
-      color: 'bg-green-100 dark:bg-green-900/30',
-      border: 'border-green-500'
+      title: 'PCEP - Python Certification',
+      company: 'Python Institute',
+      description: 'International Python programming certification demonstrating proficiency in software development.',
+      icon: <FiAward />,
+      color: 'from-yellow-500 to-amber-500',
+      bgColor: 'bg-yellow-50 dark:bg-yellow-950/30',
     },
   ]
 
   return (
     <Layout title="My Journey" showBack>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">My Journey Timeline</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A chronological overview of my experiences, achievements, and professional growth
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Professional <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Journey</span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            My career path, experiences, and professional growth timeline
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 transform md:-translate-x-1/2"></div>
+          {/* Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 transform md:-translate-x-1/2"></div>
           
           {timeline.map((item, index) => {
             const isEven = index % 2 === 0;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.5 }}
-                className={`relative mb-12 ${isEven ? 'md:ml-0 md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}
+                className={`relative mb-12 flex ${isEven ? 'justify-start' : 'justify-end'} md:justify-center`}
               >
-                <div className="flex items-start">
-                  <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-4 border-white dark:border-gray-800 bg-blue-500 z-10 transform md:-translate-x-1/2 mt-6"></div>
-                  
-                  <div className={`hidden md:block absolute top-6 ${isEven ? 'right-full mr-12 text-right' : 'left-full ml-12'} w-40`}>
-                    <span className={`inline-block px-4 py-2 text-sm font-medium rounded-full ${item.color} text-gray-900 dark:text-white shadow-sm`}>
-                      {item.year}
-                    </span>
-                  </div>
-                  
-                  <div className="md:hidden mb-4 ml-12">
-                    <span className={`inline-block px-4 py-2 text-sm font-medium rounded-full ${item.color} text-gray-900 dark:text-white shadow-sm`}>
-                      {item.year}
-                    </span>
-                  </div>
-                  
-                  <div className={`ml-12 md:ml-0 w-full ${isEven ? 'md:mr-auto md:pr-0' : 'md:ml-auto md:pl-0'} max-w-md`}>
-                    <div className={`relative p-6 rounded-2xl shadow-lg ${item.color} border-l-4 ${item.border} md:border-l-0 ${isEven ? 'md:border-r-4' : 'md:border-l-4'} hover:shadow-xl transition-shadow duration-300`}>
-                      <div className="flex items-start mb-4">
-                        <div className={`p-3 rounded-xl ${item.color.replace('bg', 'bg-opacity-20')} mr-4 flex-shrink-0`}>
-                          {item.icon}
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3>
-                          <h4 className="text-md font-medium text-gray-700 dark:text-gray-300 mb-2">{item.company}</h4>
-                        </div>
+                {/* Timeline Dot */}
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-white dark:border-gray-900 z-10 transform md:-translate-x-1/2 top-5"></div>
+                
+                {/* Content */}
+                <div className={`w-full md:w-5/12 ${isEven ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'} pl-12 md:pl-0`}>
+                  <div className={`${item.bgColor} rounded-2xl p-5 border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all`}>
+                    <div className="flex items-start mb-3">
+                      <div className={`p-2 rounded-xl bg-gradient-to-r ${item.color} text-white shadow-md mr-3`}>
+                        {item.icon}
                       </div>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{item.description}</p>
+                      <div className="flex-1">
+                        <div className="flex flex-wrap justify-between items-start gap-2">
+                          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400 flex items-center">
+                            <FiCalendar className="mr-1" size={12} /> {item.year}
+                          </span>
+                        </div>
+                        <p className="text-sm text-blue-600 dark:text-blue-400 mt-1">{item.company}</p>
+                      </div>
                     </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -124,18 +129,24 @@ const Journey = () => {
           })}
         </div>
 
+        {/* Future Section */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0.8 }}
+          className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 p-8 rounded-2xl border border-blue-100 dark:border-gray-700 max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Continuous Growth</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              I believe in lifelong learning and continuously seek opportunities to expand my skills 
-              and contribute to meaningful projects. My journey is just beginning!
+          <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-3">🚀 What's Next?</h3>
+            <p className="text-blue-100 max-w-2xl mx-auto">
+              Continuously expanding my expertise in fullstack development, cloud architecture, and cybersecurity. 
+              Open to new opportunities, collaborations, and challenging projects that make a real impact.
             </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Cloud Computing</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">DevOps</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">System Design</span>
+            </div>
           </div>
         </motion.div>
       </div>
