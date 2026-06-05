@@ -7,19 +7,12 @@ import DigitalClock from "./DigitalClock"
 const Layout = ({ children, title, showBack = false }) => {
   const navigate = useNavigate()
   const location = useLocation()
-  const [darkMode, setDarkMode] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setDarkMode(savedTheme === 'dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDarkMode(true)
-    }
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
@@ -27,22 +20,6 @@ const Layout = ({ children, title, showBack = false }) => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  useEffect(() => {
-    if (mounted) {
-      if (darkMode) {
-        document.documentElement.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-      }
-    }
-  }, [darkMode, mounted])
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode)
-  }
 
   const handleBack = () => {
     navigate(-1)
@@ -65,11 +42,11 @@ const Layout = ({ children, title, showBack = false }) => {
   if (!mounted) return null
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-[#ECDFCC] transition-colors duration-300">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20' 
+          ? 'bg-[#ECDFCC]/90 backdrop-blur-md shadow-lg border-b border-[#697565]/20' 
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,10 +58,10 @@ const Layout = ({ children, title, showBack = false }) => {
                   onClick={handleBack}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+                  className="p-2 rounded-xl bg-[#3C3D37] hover:bg-[#1E201E] transition-all"
                   aria-label="Go Back"
                 >
-                  <FiArrowLeft className="text-gray-700 dark:text-gray-300" size={18} />
+                  <FiArrowLeft className="text-[#ECDFCC]" size={18} />
                 </motion.button>
               ) : (
                 <div className="w-10"></div>
@@ -93,7 +70,7 @@ const Layout = ({ children, title, showBack = false }) => {
               <motion.button
                 onClick={goHome}
                 whileHover={{ scale: 1.02 }}
-                className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent"
+                className="text-xl sm:text-2xl font-bold text-[#1E201E]"
               >
                 MFG
               </motion.button>
@@ -108,8 +85,8 @@ const Layout = ({ children, title, showBack = false }) => {
                   whileHover={{ y: -1 }}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                     location.pathname === item.path
-                      ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md'
-                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'
+                      ? 'bg-[#1E201E] text-[#ECDFCC] shadow-md'
+                      : 'text-[#3C3D37] hover:text-[#1E201E] hover:bg-[#697565]/20'
                   }`}
                 >
                   {item.label}
@@ -128,7 +105,7 @@ const Layout = ({ children, title, showBack = false }) => {
                   href="https://instagram.com/maszal_08"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl text-gray-600 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                  className="p-2 rounded-xl text-[#3C3D37] hover:text-[#1E201E] hover:bg-[#697565]/20 transition-all"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FiInstagram size={18} />
@@ -137,7 +114,7 @@ const Layout = ({ children, title, showBack = false }) => {
                   href="https://github.com/Masfahri2005"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                  className="p-2 rounded-xl text-[#3C3D37] hover:text-[#1E201E] hover:bg-[#697565]/20 transition-all"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FiGithub size={18} />
@@ -146,33 +123,19 @@ const Layout = ({ children, title, showBack = false }) => {
                   href="https://www.linkedin.com/in/muhammadfakhrizal-748398290"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                  className="p-2 rounded-xl text-[#3C3D37] hover:text-[#1E201E] hover:bg-[#697565]/20 transition-all"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FiLinkedin size={18} />
                 </motion.a>
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={toggleTheme}
-                className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
-                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-              >
-                {darkMode ? (
-                  <FiSun className="text-yellow-400" size={18} />
-                ) : (
-                  <FiMoon className="text-gray-700" size={18} />
-                )}
-              </motion.button>
-
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-xl bg-gray-100 dark:bg-gray-800 transition-all"
+                className="md:hidden p-2 rounded-xl bg-[#3C3D37] transition-all"
               >
-                {mobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+                {mobileMenuOpen ? <FiX size={20} className="text-[#ECDFCC]" /> : <FiMenu size={20} className="text-[#ECDFCC]" />}
               </button>
             </div>
           </div>
@@ -185,7 +148,7 @@ const Layout = ({ children, title, showBack = false }) => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
+              className="md:hidden overflow-hidden border-t border-[#697565]/20 bg-[#ECDFCC]"
             >
               <div className="px-4 py-4 space-y-1">
                 {navItems.map((item) => (
@@ -197,21 +160,21 @@ const Layout = ({ children, title, showBack = false }) => {
                     }}
                     className={`w-full px-4 py-3 rounded-xl text-left font-medium transition-all ${
                       location.pathname === item.path
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white'
-                        : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        ? 'bg-[#1E201E] text-[#ECDFCC]'
+                        : 'text-[#3C3D37] hover:bg-[#697565]/20'
                     }`}
                   >
                     {item.label}
                   </button>
                 ))}
-                <div className="flex items-center gap-3 pt-4 mt-2 border-t border-gray-200 dark:border-gray-800">
-                  <a href="https://instagram.com/maszal_08" target="_blank" className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center gap-3 pt-4 mt-2 border-t border-[#697565]/20">
+                  <a href="https://instagram.com/maszal_08" target="_blank" className="p-2 rounded-xl bg-[#3C3D37] text-[#ECDFCC]">
                     <FiInstagram size={18} />
                   </a>
-                  <a href="https://github.com/Masfahri2005" target="_blank" className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                  <a href="https://github.com/Masfahri2005" target="_blank" className="p-2 rounded-xl bg-[#3C3D37] text-[#ECDFCC]">
                     <FiGithub size={18} />
                   </a>
-                  <a href="https://www.linkedin.com/in/muhammadfakhrizal-748398290" target="_blank" className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                  <a href="https://www.linkedin.com/in/muhammadfakhrizal-748398290" target="_blank" className="p-2 rounded-xl bg-[#3C3D37] text-[#ECDFCC]">
                     <FiLinkedin size={18} />
                   </a>
                 </div>
@@ -239,9 +202,9 @@ const Layout = ({ children, title, showBack = false }) => {
       </main>
 
       {/* Footer */}
-      <footer className="py-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+      <footer className="py-6 border-t border-[#697565]/20 bg-[#ECDFCC]/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-[#697565]">
             <p>© {new Date().getFullYear()} Muhammad Fakhrizal Garnindyo. All rights reserved.</p>
             <p className="text-xs">Software Engineer | Fullstack Developer</p>
           </div>

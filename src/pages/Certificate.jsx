@@ -30,8 +30,7 @@ const certificates = [
     title: "Sertifikat KTI Terbaik",
     issuer: "SMA Citra Nusa",
     date: "17 Juli 2023",
-    description:
-      "An award granted for outstanding achievement in producing the best scientific paper at the senior high school level, recognizing critical thinking, analytical skills, and scientific methodology.",
+    description: "An award granted for outstanding achievement in producing the best scientific paper at the senior high school level, recognizing critical thinking, analytical skills, and scientific methodology.",
     imageUrl: Certificate2,
   },
   {
@@ -39,7 +38,7 @@ const certificates = [
     title: "Workshop React JS Al-Quran",
     issuer: "Dunia Coding",
     date: "25 Maret 2025",
-    description: "A hands-on workshop focused on web application development using React JS, with a case study on building an Al-Qur’an application to enhance modern programming skills.",
+    description: "A hands-on workshop focused on web application development using React JS, with a case study on building an Al-Qur'an application to enhance modern programming skills.",
     imageUrl: Certificate3,
   },
   {
@@ -47,8 +46,7 @@ const certificates = [
     title: "PCAP - Python Programmer",
     issuer: "Python Institute",
     date: "25 Maret 2025",
-    description:
-      "An international certification in Python programming organized by NetAcademy, demonstrating proficiency in software development and problem-solving using Python.",
+    description: "An international certification in Python programming organized by NetAcademy, demonstrating proficiency in software development and problem-solving using Python.",
     imageUrl: Certificate4,
   },
   {
@@ -64,8 +62,7 @@ const certificates = [
     title: "Talk With Study",
     issuer: "BEM STT NF",
     date: "7 September 2023",
-    description:
-      "A collaborative discussion and networking event with the IT Club of Nurul Fikri Integrated Technology College, focusing on information technology trends, programming, and professional development.",
+    description: "A collaborative discussion and networking event with the IT Club of Nurul Fikri Integrated Technology College, focusing on information technology trends, programming, and professional development.",
     imageUrl: Certificate6,
   },
   {
@@ -89,7 +86,7 @@ const certificates = [
     title: "Sertifikat LDMKM",
     issuer: "HIMA SI",
     date: "7 Januari 2024",
-    description: "A leadership development program designed to enhance students’ managerial skills, communication abilities, decision-making, and organizational leadership.",
+    description: "A leadership development program designed to enhance students' managerial skills, communication abilities, decision-making, and organizational leadership.",
     imageUrl: Certificate9,
   },
   {
@@ -105,8 +102,7 @@ const certificates = [
     title: "Certificate of Key-Team NFSCC",
     issuer: "NFSCC",
     date: "30 Januari 2026",
-    description:
-      "This certificate recognizes my consistent involvement, dedication, and contributions to organizational activities throughout the 2025/2026 management period at Sekolah Tinggi Teknologi Terpadu Nurul Fikri.",
+    description: "This certificate recognizes my consistent involvement, dedication, and contributions to organizational activities throughout the 2025/2026 management period at Sekolah Tinggi Teknologi Terpadu Nurul Fikri.",
     imageUrl: Certificate11,
   },
   {
@@ -114,8 +110,7 @@ const certificates = [
     title: "Certificate of Appreciation Events Red Team Vs Blue Team",
     issuer: "NFSCC",
     date: "16 November 2025",
-    description:
-      "Awarded for serving as a committee member in the cybersecurity program Red Team vs Blue Team: From Attacker to Defender,organized by NFSCC.",
+    description: "Awarded for serving as a committee member in the cybersecurity program Red Team vs Blue Team: From Attacker to Defender, organized by NFSCC.",
     imageUrl: Certificate12,
   },
   {
@@ -123,8 +118,7 @@ const certificates = [
     title: "Certificate of Appreciation Event Cysec 101",
     issuer: "NFSCC",
     date: "28 September 2025",
-    description:
-      "Awarded for serving as a committee member in the cybersecurity seminar Cyber Security 101: The Basics of Recognizing and Handling Cyber Threats, organized by the Nurul Fikri Student Cybersecurity Community.",
+    description: "Awarded for serving as a committee member in the cybersecurity seminar Cyber Security 101: The Basics of Recognizing and Handling Cyber Threats, organized by the Nurul Fikri Student Cybersecurity Community.",
     imageUrl: Certificate13,
   },
   {
@@ -132,8 +126,7 @@ const certificates = [
     title: "Sertifikasi Asisten Dosen",
     issuer: "STT NF",
     date: "3 Februari 2026",
-    description:
-      "A certificate of appreciation awarded for serving as a Teaching Assistant in the Software Engineering course for third-semester students, recognizing contributions to academic and practical learning activities.",
+    description: "A certificate of appreciation awarded for serving as a Teaching Assistant in the Software Engineering course for third-semester students, recognizing contributions to academic and practical learning activities.",
     imageUrl: Certificate14,
   },
 ];
@@ -143,12 +136,11 @@ const Certificate = () => {
     <Layout title="My Certificates" showBack>
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+          <h1 className="text-4xl font-bold text-[#1E201E] mb-4">
             My Certificates
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Proof of achievements and professional recognition that I have
-            obtained
+          <p className="text-lg text-[#3C3D37] max-w-2xl mx-auto">
+            Proof of achievements and professional recognition that I have obtained
           </p>
         </div>
 
@@ -160,7 +152,7 @@ const Certificate = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: certificate.id * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:border-blue-500 transition-all duration-300"
+              className="group bg-[#ECDFCC] rounded-2xl overflow-hidden shadow-md border border-[#697565]/30 hover:shadow-2xl hover:border-[#697565] transition-all duration-300"
             >
               <div className="relative h-56 overflow-hidden">
                 <img
@@ -168,40 +160,39 @@ const Certificate = () => {
                   alt={certificate.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+                    e.target.src = "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1E201E]/70 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <span className="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  <span className="inline-block px-3 py-1 bg-[#697565] text-[#ECDFCC] text-xs font-semibold rounded-full shadow-md">
                     {certificate.date}
                   </span>
                 </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2 leading-tight group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-[#1E201E] mb-2 leading-tight group-hover:text-[#697565] transition-colors">
                   {certificate.title}
                 </h3>
 
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                <div className="flex items-center gap-2 text-sm text-[#3C3D37] mb-2">
                   <span className="font-semibold">Issuer:</span>
                   <span>{certificate.issuer}</span>
                 </div>
 
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-2 mb-4">
+                <p className="text-sm text-[#697565] leading-relaxed line-clamp-2 mb-4">
                   {certificate.description}
                 </p>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                  <span className="text-xs text-[#3C3D37]">
                     Certificate ID: {certificate.id.toString().padStart(3, "0")}
                   </span>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
+                    className="text-xs text-[#697565] hover:text-[#1E201E] font-medium"
                     onClick={() => {
                       window.open(certificate.imageUrl, "_blank");
                     }}
@@ -220,10 +211,10 @@ const Certificate = () => {
           transition={{ delay: 1 }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 p-6 rounded-2xl border border-blue-100 dark:border-gray-700 inline-block">
-            <p className="text-gray-600 dark:text-gray-300">
+          <div className="bg-gradient-to-r from-[#3C3D37] to-[#1E201E] p-6 rounded-2xl inline-block">
+            <p className="text-[#ECDFCC]">
               Total Certificates:{" "}
-              <span className="font-bold text-blue-600 dark:text-blue-400">
+              <span className="font-bold text-[#697565]">
                 {certificates.length}
               </span>{" "}
               • Click "View Certificate" to see full size

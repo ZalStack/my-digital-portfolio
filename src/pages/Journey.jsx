@@ -11,8 +11,8 @@ const Journey = () => {
       company: 'Parthaistic Digital Agency',
       description: 'Developing Finance and HR Management System using Laravel, Livewire, Tailwind CSS, and MySQL. Implementing scalable backend architecture and financial management features.',
       icon: <FiBriefcase />,
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'bg-blue-50 dark:bg-blue-950/30',
+      color: 'from-[#697565] to-[#3C3D37]',
+      bgColor: 'bg-[#3C3D37]/10',
     },
     {
       year: '2025 - 2026',
@@ -20,8 +20,8 @@ const Journey = () => {
       company: 'STT Nurul Fikri',
       description: 'Teaching Assistant for Software Engineering course, guiding 3rd semester students in software development methodologies, system design, and practical implementations.',
       icon: <FiUsers />,
-      color: 'from-purple-500 to-pink-500',
-      bgColor: 'bg-purple-50 dark:bg-purple-950/30',
+      color: 'from-[#1E201E] to-[#3C3D37]',
+      bgColor: 'bg-[#1E201E]/10',
     },
     {
       year: '2025 - 2026',
@@ -29,8 +29,8 @@ const Journey = () => {
       company: 'Student Identity Management App',
       description: 'Designed UI/UX using Activity-Centered Design methodology for student identity management application.',
       icon: <FiCode />,
-      color: 'from-amber-500 to-orange-500',
-      bgColor: 'bg-amber-50 dark:bg-amber-950/30',
+      color: 'from-[#697565] to-[#1E201E]',
+      bgColor: 'bg-[#697565]/10',
     },
     {
       year: '2025 - Present',
@@ -38,8 +38,8 @@ const Journey = () => {
       company: 'STT NF Innovation Lab',
       description: 'Building collaborative technology learning environment and facilitating backend development programs.',
       icon: <FiShield />,
-      color: 'from-emerald-500 to-teal-500',
-      bgColor: 'bg-emerald-50 dark:bg-emerald-950/30',
+      color: 'from-[#3C3D37] to-[#697565]',
+      bgColor: 'bg-[#3C3D37]/10',
     },
     {
       year: '2025 - 2026',
@@ -47,8 +47,8 @@ const Journey = () => {
       company: 'Nurul Fikri Student Cybersecurity Community',
       description: 'Managing recruitment, member development, and fostering positive organizational culture.',
       icon: <FiUsers />,
-      color: 'from-rose-500 to-red-500',
-      bgColor: 'bg-rose-50 dark:bg-rose-950/30',
+      color: 'from-[#1E201E] to-[#697565]',
+      bgColor: 'bg-[#1E201E]/10',
     },
     {
       year: '2024 - Present',
@@ -56,8 +56,8 @@ const Journey = () => {
       company: 'Self-Employed',
       description: 'Building custom web applications using React.js, Next.js, Laravel, Express.js, and MySQL for various clients.',
       icon: <FiCode />,
-      color: 'from-indigo-500 to-purple-500',
-      bgColor: 'bg-indigo-50 dark:bg-indigo-950/30',
+      color: 'from-[#3C3D37] to-[#1E201E]',
+      bgColor: 'bg-[#3C3D37]/10',
     },
     {
       year: '2024',
@@ -65,8 +65,8 @@ const Journey = () => {
       company: 'Python Institute',
       description: 'International Python programming certification demonstrating proficiency in software development.',
       icon: <FiAward />,
-      color: 'from-yellow-500 to-amber-500',
-      bgColor: 'bg-yellow-50 dark:bg-yellow-950/30',
+      color: 'from-[#697565] to-[#3C3D37]',
+      bgColor: 'bg-[#697565]/10',
     },
   ]
 
@@ -79,17 +79,17 @@ const Journey = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Professional <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Journey</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1E201E] mb-4">
+            Professional <span className="text-[#697565]">Journey</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-[#3C3D37] max-w-2xl mx-auto">
             My career path, experiences, and professional growth timeline
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 transform md:-translate-x-1/2"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#697565] via-[#3C3D37] to-[#1E201E] transform md:-translate-x-1/2"></div>
           
           {timeline.map((item, index) => {
             const isEven = index % 2 === 0;
@@ -102,26 +102,26 @@ const Journey = () => {
                 className={`relative mb-12 flex ${isEven ? 'justify-start' : 'justify-end'} md:justify-center`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-white dark:border-gray-900 z-10 transform md:-translate-x-1/2 top-5"></div>
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-[#697565] to-[#3C3D37] border-4 border-[#ECDFCC] z-10 transform md:-translate-x-1/2 top-5"></div>
                 
                 {/* Content */}
                 <div className={`w-full md:w-5/12 ${isEven ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'} pl-12 md:pl-0`}>
-                  <div className={`${item.bgColor} rounded-2xl p-5 border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all`}>
+                  <div className={`${item.bgColor} rounded-2xl p-5 border border-[#697565]/30 shadow-lg hover:shadow-xl transition-all bg-[#ECDFCC]`}>
                     <div className="flex items-start mb-3">
-                      <div className={`p-2 rounded-xl bg-gradient-to-r ${item.color} text-white shadow-md mr-3`}>
+                      <div className={`p-2 rounded-xl bg-gradient-to-r ${item.color} text-[#ECDFCC] shadow-md mr-3`}>
                         {item.icon}
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-wrap justify-between items-start gap-2">
-                          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.title}</h3>
-                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400 flex items-center">
+                          <h3 className="text-lg font-bold text-[#1E201E]">{item.title}</h3>
+                          <span className="text-xs font-medium text-[#697565] flex items-center">
                             <FiCalendar className="mr-1" size={12} /> {item.year}
                           </span>
                         </div>
-                        <p className="text-sm text-blue-600 dark:text-blue-400 mt-1">{item.company}</p>
+                        <p className="text-sm text-[#3C3D37] mt-1">{item.company}</p>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{item.description}</p>
+                    <p className="text-sm text-[#697565] leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -136,16 +136,16 @@ const Journey = () => {
           transition={{ delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-[#1E201E] to-[#3C3D37] rounded-2xl p-8 text-[#ECDFCC]">
             <h3 className="text-2xl font-bold mb-3">🚀 What's Next?</h3>
-            <p className="text-blue-100 max-w-2xl mx-auto">
+            <p className="text-[#ECDFCC]/80 max-w-2xl mx-auto">
               Continuously expanding my expertise in fullstack development, cloud architecture, and cybersecurity. 
               Open to new opportunities, collaborations, and challenging projects that make a real impact.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mt-4">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Cloud Computing</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">DevOps</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">System Design</span>
+              <span className="px-3 py-1 bg-[#ECDFCC]/20 rounded-full text-sm">Cloud Computing</span>
+              <span className="px-3 py-1 bg-[#ECDFCC]/20 rounded-full text-sm">DevOps</span>
+              <span className="px-3 py-1 bg-[#ECDFCC]/20 rounded-full text-sm">System Design</span>
             </div>
           </div>
         </motion.div>

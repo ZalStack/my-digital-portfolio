@@ -13,6 +13,7 @@ import Project7 from "../assets/images/project7/project.png";
 import Project8 from "../assets/images/project8/project.png";
 import Project9 from "../assets/images/project9/project.png";
 import Project10 from "../assets/images/project10/project.png";
+import Project11 from "../assets/images/project11/project.png";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -21,8 +22,7 @@ const Projects = () => {
     {
       id: 1,
       title: "Campus Vehicle Parking",
-      description:
-        "Campus Vehicle Parking is a web-based parking data management application developed as a final project for the Web Programming 2 course. This application is designed to simplify parking data management for vehicles on campus, improve data efficiency and accuracy, and provide users with quick and effective access to parking information.",
+      description: "Campus Vehicle Parking is a web-based parking data management application developed as a final project for the Web Programming 2 course. This application is designed to simplify parking data management for vehicles on campus, improve data efficiency and accuracy, and provide users with quick and effective access to parking information.",
       tags: ["Laravel", "Bootstrap", "MySQL"],
       imageUrl: Project2,
       category: "Web Application",
@@ -31,8 +31,7 @@ const Projects = () => {
     {
       id: 2,
       title: "Puskesmas Data Management",
-      description:
-        "Comprehensive healthcare data management system for community health centers.",
+      description: "Comprehensive healthcare data management system for community health centers.",
       tags: ["PHP Native", "Bootstrap", "MySQL"],
       imageUrl: Project1,
       category: "Management System",
@@ -41,8 +40,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Anime List",
-      description:
-        "Interactive platform for anime enthusiasts with personalized recommendations.",
+      description: "Interactive platform for anime enthusiasts with personalized recommendations.",
       tags: ["Next.js", "Express.js", "Tailwind CSS"],
       imageUrl: Project3,
       category: "Entertainment",
@@ -51,8 +49,7 @@ const Projects = () => {
     {
       id: 4,
       title: "Medcare AI Website",
-      description:
-        "AI-powered healthcare platform with symptom checker and doctor matching.",
+      description: "AI-powered healthcare platform with symptom checker and doctor matching.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Gemini API"],
       imageUrl: Project4,
       category: "Healthcare AI",
@@ -61,8 +58,7 @@ const Projects = () => {
     {
       id: 5,
       title: "AI Career Advisor",
-      description:
-        "Intelligent career guidance system with personality assessment.",
+      description: "Intelligent career guidance system with personality assessment.",
       tags: ["React", "TypeScript", "Gemini API", "JSDPF"],
       imageUrl: Project5,
       category: "Career Development",
@@ -71,8 +67,7 @@ const Projects = () => {
     {
       id: 6,
       title: "GO-MAT INFORMATION",
-      description:
-        "Go-Mat is an online mathematics learning platform designed to help you improve your math skills from basic to advanced.",
+      description: "Go-Mat is an online mathematics learning platform designed to help you improve your math skills from basic to advanced.",
       tags: ["React", "Three js", "Tailwindcss"],
       imageUrl: Project6,
       category: "Academic",
@@ -81,8 +76,7 @@ const Projects = () => {
     {
       id: 7,
       title: "QURAN DIGITAL APP",
-      description:
-        "QURAN DIGITAL APP is a digital application that provides easy access to the Quran, the holy book of Islam. This application is designed to help users read, understand, and appreciate the Quran better.",
+      description: "QURAN DIGITAL APP is a digital application that provides easy access to the Quran, the holy book of Islam.",
       tags: ["React", "TypeScript", "Tailwindcss"],
       imageUrl: Project7,
       category: "Islamic",
@@ -91,8 +85,7 @@ const Projects = () => {
     {
       id: 8,
       title: "SMART KIA",
-      description:
-        "SmartKIA is a digital platform designed to securely and systematically record maternal and child health information. This application offers essential features such as health history records, immunization reminders, and online consultations with medical professionals.",
+      description: "SmartKIA is a digital platform designed to securely and systematically record maternal and child health information.",
       tags: ["UI/UX", "Figma"],
       imageUrl: Project8,
       category: "Healthy",
@@ -101,22 +94,29 @@ const Projects = () => {
     {
       id: 9,
       title: "RELIEF SALING SILANG",
-      description:
-        "Saling Silang App is designed to facilitate digital communication, collaboration, and exchange of goods or services. With integrated modern technology, this app aims to create an efficient digital ecosystem that supports community-based activities.",
+      description: "Saling Silang App is designed to facilitate digital communication, collaboration, and exchange of goods or services.",
       tags: ["UI/UX", "Figma"],
       imageUrl: Project9,
-      category: "Comunity Saling Silang",
+      category: "Community Saling Silang",
       year: "2024",
     },
     {
       id: 10,
       title: "PARTHAFIN FINANCIAL WEB",
-      description:
-        "As Backend Developer, I designed and built a comprehensive financial management platform using Laravel and MySQL.",
+      description: "As Backend Developer, I designed and built a comprehensive financial management platform using Laravel and MySQL.",
       tags: ["Laravel", "MySQL"],
       imageUrl: Project10,
       category: "Company",
       year: "2025",
+    },
+    {
+      id: 11,
+      title: "SoleMate Store - E-Commerce Footwear Platform",
+      description: "SoleMate Store is a modern web-based e-commerce application focused on online footwear sales with secure authentication, product management, shopping cart, online checkout, and Midtrans payment gateway integration.",
+      tags: ["Laravel", "TailwindCSS", "Midtrans", "MySQL", "Alpine.js"],
+      imageUrl: Project11,
+      category: "E-Commerce Application",
+      year: "2026",
     },
   ];
 
@@ -133,11 +133,10 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          <h2 className="text-3xl font-bold text-[#1E201E] mb-2">
             My Projects
           </h2>
-
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-[#3C3D37] max-w-3xl mx-auto">
             Here are some projects that I have created and developed. Each
             project represents a unique challenge that drives me to create
             innovative and effective solutions
@@ -167,9 +166,8 @@ const Projects = () => {
           transition={{ delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-500 dark:text-gray-400">
-            Showing {projects.length} projects • Click on any project to view
-            details
+          <p className="text-[#697565]">
+            Showing {projects.length} projects • Click on any project to view details
           </p>
         </motion.div>
       </div>

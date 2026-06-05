@@ -19,6 +19,7 @@ import Project7 from "../assets/images/project7/project.png";
 import Project8 from "../assets/images/project8/project.png";
 import Project9 from "../assets/images/project9/project.png";
 import Project10 from "../assets/images/project10/project.png";
+import Project11 from "../assets/images/project11/project.png";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -292,14 +293,52 @@ const ProjectDetail = () => {
         "Dashboard User Admin & Finance Staff",
         "PDF reports with password protection",
         "Wallet system with auto-balance calculation & transfers",
-        "Category management with account codes"
+        "Category management with account codes",
       ],
       imageUrl: Project10,
-      githubUrl:
-        "",
+      githubUrl: "",
       liveUrl: null,
       category: "Company",
       year: "2025",
+    },
+    {
+      id: 11,
+      title: "SoleMate Store - E-Commerce Footwear Platform",
+      description:
+        "SoleMate Store is a modern web-based e-commerce application focused on online footwear sales with secure authentication, product management, shopping cart, online checkout, and Midtrans payment gateway integration.",
+      longDescription: [
+        "SoleMate Store is a complete e-commerce platform built for footwear retail, featuring secure authentication, role-based access control, product management, shopping cart functionality, and seamless payment processing through Midtrans payment gateway.",
+        "The system implements a black and white minimalist design with responsive TailwindCSS, providing users with an intuitive shopping experience across all devices. Customers can browse products, manage their cart, checkout online, and track order history in real-time.",
+        "Administrators have access to a comprehensive dashboard for managing products, processing orders, viewing transaction analytics, managing promo codes, and handling customer reviews. The system also includes WhatsApp integration for automatic invoice and order status notifications.",
+      ],
+      tags: ["Laravel", "TailwindCSS", "Midtrans", "MySQL", "Alpine.js"],
+      technologies: [
+        "Laravel 13",
+        "TailwindCSS",
+        "MySQL",
+        "Midtrans Payment Gateway",
+        "Alpine.js",
+        "Laravel Breeze Authentication",
+        "WhatsApp API Integration",
+      ],
+      features: [
+        "Secure Authentication with Role Management (Admin & Customer)",
+        "Product Management with Image Upload",
+        "Shopping Cart with 10-item limit and auto-cleanup",
+        "Midtrans Payment Gateway Integration (Bank Transfer, QRIS, Gopay, ShopeePay)",
+        "Order Management & Transaction History",
+        "Wishlist & Product Review System",
+        "Promo Code & Discount Management",
+        "Advanced Analytics Dashboard with Charts",
+        "WhatsApp Invoice & Order Status Notification",
+        "Real-time Order Tracking",
+        "Responsive Black & White Modern Design",
+      ],
+      imageUrl: Project11,
+      githubUrl: null,
+      liveUrl: null,
+      category: "E-Commerce Application",
+      year: "2026",
     },
   ];
 

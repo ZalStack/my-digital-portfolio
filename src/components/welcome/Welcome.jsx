@@ -1,3 +1,4 @@
+// src/components/welcome/Welcome.jsx
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
@@ -21,7 +22,6 @@ const Welcome = () => {
     const timer1 = setTimeout(() => setShowInput(true), 2000)
     const timer2 = setTimeout(() => setShowButton(true), 3500)
     
-    // Rotate roles
     const roleInterval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length)
     }, 2500)
@@ -48,21 +48,21 @@ const Welcome = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1E201E] via-[#3C3D37] to-[#1E201E]">
         {/* Dot Pattern */}
         <div 
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle, rgba(236,223,204,0.1) 1px, transparent 1px)`,
             backgroundSize: '30px 30px'
           }}
         ></div>
       </div>
 
       {/* Animated Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#697565] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#3C3D37] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#ECDFCC] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       {/* Content Container */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
@@ -73,9 +73,9 @@ const Welcome = () => {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ECDFCC]/10 backdrop-blur-sm rounded-full border border-[#ECDFCC]/20">
             <span className="text-2xl">👋</span>
-            <span className="text-sm text-white/80">Welcome to My Digital Portfolio</span>
+            <span className="text-sm text-[#ECDFCC]/80">Welcome to My Digital Portfolio</span>
           </div>
         </motion.div>
 
@@ -87,12 +87,12 @@ const Welcome = () => {
           className="mb-4"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
-            <span className="text-white">Muhammad </span>
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-[#ECDFCC]">Muhammad </span>
+            <span className="text-[#697565]">
               Fakhrizal
             </span>
           </h1>
-          <h2 className="text-white/70 text-lg sm:text-xl md:text-2xl mt-2">
+          <h2 className="text-[#ECDFCC]/70 text-lg sm:text-xl md:text-2xl mt-2">
             Garnindyo
           </h2>
         </motion.div>
@@ -111,10 +111,10 @@ const Welcome = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#ECDFCC]/10 backdrop-blur-sm rounded-full border border-[#ECDFCC]/20"
             >
-              <span className="text-purple-400 text-xl">{roles[currentRole].icon}</span>
-              <span className="text-white text-lg sm:text-xl font-medium">
+              <span className="text-[#697565] text-xl">{roles[currentRole].icon}</span>
+              <span className="text-[#ECDFCC] text-lg sm:text-xl font-medium">
                 {roles[currentRole].title}
               </span>
             </motion.div>
@@ -131,7 +131,7 @@ const Welcome = () => {
           {["React.js", "Next.js", "Laravel", "Express.js", "TypeScript", "Python", "TailwindCSS", "MySQL"].map((tech, idx) => (
             <span
               key={idx}
-              className="px-3 py-1.5 bg-white/5 backdrop-blur-sm rounded-full text-white/50 text-xs sm:text-sm hover:bg-white/10 hover:text-white/70 transition-all duration-300"
+              className="px-3 py-1.5 bg-[#ECDFCC]/5 backdrop-blur-sm rounded-full text-[#ECDFCC]/50 text-xs sm:text-sm hover:bg-[#ECDFCC]/10 hover:text-[#ECDFCC]/70 transition-all duration-300"
             >
               {tech}
             </span>
@@ -148,14 +148,14 @@ const Welcome = () => {
               className="mb-6"
             >
               <div className="relative max-w-sm mx-auto">
-                <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/40" size={18} />
+                <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#ECDFCC]/40" size={18} />
                 <input
                   type="text"
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Enter your name"
-                  className="w-full px-12 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white placeholder-white/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                  className="w-full px-12 py-3 rounded-xl bg-[#ECDFCC]/10 backdrop-blur-sm text-[#ECDFCC] placeholder-[#ECDFCC]/30 border border-[#ECDFCC]/20 focus:outline-none focus:ring-2 focus:ring-[#697565] focus:border-transparent transition-all"
                   autoFocus
                 />
               </div>
@@ -177,15 +177,15 @@ const Welcome = () => {
                 disabled={showInput && !userName.trim()}
                 className={`group relative px-8 py-3 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 ${
                   showInput && !userName.trim()
-                    ? "bg-white/10 text-white/30 cursor-not-allowed"
-                    : "bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 text-white hover:shadow-xl hover:shadow-purple-500/25"
+                    ? "bg-[#ECDFCC]/10 text-[#ECDFCC]/30 cursor-not-allowed"
+                    : "bg-gradient-to-r from-[#1E201E] via-[#3C3D37] to-[#697565] text-[#ECDFCC] hover:shadow-xl hover:shadow-[#1E201E]/25"
                 }`}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Enter Portfolio
                   <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#3C3D37] via-[#697565] to-[#3C3D37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
             </motion.div>
           )}
@@ -196,7 +196,7 @@ const Welcome = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4 }}
-          className="mt-10 text-white/30 text-xs sm:text-sm"
+          className="mt-10 text-[#ECDFCC]/30 text-xs sm:text-sm"
         >
           "Building innovative digital solutions with modern technology"
         </motion.p>

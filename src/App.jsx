@@ -1,3 +1,4 @@
+// src/App.jsx
 import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Welcome from './components/welcome/Welcome'
@@ -22,7 +23,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <div className="App font-sans antialiased">
+    <div className="App font-sans antialiased bg-[#ECDFCC]">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Welcome />} />

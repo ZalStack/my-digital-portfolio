@@ -25,12 +25,12 @@ const DigitalClock = () => {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="font-mono text-sm bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-xl">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">
+      <div className="font-mono text-sm bg-[#3C3D37] px-3 py-1.5 rounded-xl">
+        <span className="text-[#ECDFCC] font-medium">
           {formatTime(time.getHours())}:{formatTime(time.getMinutes())}:{formatTime(time.getSeconds())}
         </span>
       </div>
-      <span className="text-xs text-gray-500 dark:text-gray-400 hidden sm:inline">
+      <span className="text-xs text-[#697565] hidden sm:inline">
         {getGreeting()}
       </span>
     </div>

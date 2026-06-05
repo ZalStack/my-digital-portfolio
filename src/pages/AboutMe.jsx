@@ -1,3 +1,4 @@
+// src/pages/AboutMe.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/common/Layout";
@@ -67,7 +68,7 @@ const AboutMe = () => {
           >
             <div className="sticky top-24">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#697565] to-[#3C3D37] rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <img
                     src={MyProfile}
@@ -80,40 +81,40 @@ const AboutMe = () => {
                 </div>
               </div>
 
-              <div className="mt-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Personal Info</h3>
+              <div className="mt-6 bg-[#ECDFCC] rounded-2xl shadow-lg p-6 border border-[#697565]/30">
+                <h3 className="text-lg font-bold mb-4 text-[#1E201E]">Personal Info</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
-                    <FiMapPin className="text-blue-500 mr-3 mt-0.5" />
+                    <FiMapPin className="text-[#697565] mr-3 mt-0.5" />
                     <div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Location</p>
-                      <p className="font-medium text-gray-900 dark:text-white">Bogor, Jawa Barat, Indonesia</p>
+                      <p className="text-xs text-[#3C3D37]">Location</p>
+                      <p className="font-medium text-[#1E201E]">Bogor, Jawa Barat, Indonesia</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <FiMail className="text-blue-500 mr-3 mt-0.5" />
+                    <FiMail className="text-[#697565] mr-3 mt-0.5" />
                     <div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Email</p>
-                      <p className="font-medium text-gray-900 dark:text-white break-all">fakhrizalgarnindyo@gmail.com</p>
+                      <p className="text-xs text-[#3C3D37]">Email</p>
+                      <p className="font-medium text-[#1E201E] break-all">fakhrizalgarnindyo@gmail.com</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <FiGlobe className="text-blue-500 mr-3 mt-0.5" />
+                    <FiGlobe className="text-[#697565] mr-3 mt-0.5" />
                     <div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Languages</p>
-                      <p className="font-medium text-gray-900 dark:text-white">Indonesian , English </p>
+                      <p className="text-xs text-[#3C3D37]">Languages</p>
+                      <p className="font-medium text-[#1E201E]">Indonesian, English</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
               {/* CV Download */}
-              <div className="mt-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-6 border border-blue-100 dark:border-gray-700">
-                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Curriculum Vitae</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Download my comprehensive CV including professional experience, education, and skills.</p>
+              <div className="mt-6 bg-gradient-to-r from-[#3C3D37] to-[#1E201E] rounded-2xl p-6">
+                <h3 className="text-lg font-bold mb-2 text-[#ECDFCC]">Curriculum Vitae</h3>
+                <p className="text-sm text-[#ECDFCC]/70 mb-4">Download my comprehensive CV including professional experience, education, and skills.</p>
                 <button
                   onClick={handleDownloadCV}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#ECDFCC] text-[#1E201E] rounded-xl font-semibold hover:bg-[#697565] hover:text-[#ECDFCC] transition-all"
                 >
                   <FiDownload /> Download CV (PDF)
                 </button>
@@ -129,23 +130,23 @@ const AboutMe = () => {
             className="lg:col-span-2 space-y-8"
           >
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Muhammad <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Fakhrizal Garnindyo</span>
+              <h1 className="text-3xl md:text-4xl font-bold text-[#1E201E] mb-4">
+                Muhammad <span className="text-[#697565]">Fakhrizal Garnindyo</span>
               </h1>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Software Engineer</span>
-                <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">Fullstack Developer</span>
-                <span className="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm">Tech Enthusiast</span>
+                <span className="px-3 py-1 bg-[#3C3D37] text-[#ECDFCC] rounded-full text-sm">Software Engineer</span>
+                <span className="px-3 py-1 bg-[#697565] text-[#ECDFCC] rounded-full text-sm">Fullstack Developer</span>
+                <span className="px-3 py-1 bg-[#1E201E] text-[#ECDFCC] rounded-full text-sm">Tech Enthusiast</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-[#3C3D37] leading-relaxed">
                 A passionate Software Engineer and Fullstack Developer with strong expertise in both frontend and backend development using modern web technologies. Experienced in building scalable, responsive, and user-friendly web applications, while also ensuring robust system architecture and performance. Actively involved in cybersecurity communities and academic environments, combining technical expertise with leadership, communication, and problem-solving skills.
               </p>
             </div>
 
             {/* Experience Section */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                <FiBriefcase className="mr-2 text-blue-500" /> Work Experience
+              <h2 className="text-2xl font-bold text-[#1E201E] mb-4 flex items-center">
+                <FiBriefcase className="mr-2 text-[#697565]" /> Work Experience
               </h2>
               <div className="space-y-4">
                 {experiences.map((exp, idx) => (
@@ -154,16 +155,16 @@ const AboutMe = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-[#ECDFCC] rounded-xl p-4 border border-[#697565]/30 shadow-sm hover:shadow-md transition-shadow"
                   >
                     <div className="flex flex-wrap justify-between items-start mb-2">
-                      <h3 className="font-semibold text-gray-900 dark:text-white">{exp.role}</h3>
-                      <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
+                      <h3 className="font-semibold text-[#1E201E]">{exp.role}</h3>
+                      <span className="text-xs text-[#697565] flex items-center">
                         <FiCalendar className="mr-1" size={12} /> {exp.period}
                       </span>
                     </div>
-                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">{exp.company}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{exp.description}</p>
+                    <p className="text-sm text-[#3C3D37] mb-2">{exp.company}</p>
+                    <p className="text-sm text-[#697565]">{exp.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -171,20 +172,20 @@ const AboutMe = () => {
 
             {/* Education */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                <FiAward className="mr-2 text-purple-500" /> Education
+              <h2 className="text-2xl font-bold text-[#1E201E] mb-4 flex items-center">
+                <FiAward className="mr-2 text-[#697565]" /> Education
               </h2>
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
-                <h3 className="font-semibold text-gray-900 dark:text-white">Sekolah Tinggi Teknologi Terpadu Nurul Fikri</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Bachelor's Degree in Information Systems</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Current Student</p>
+              <div className="bg-[#ECDFCC] rounded-xl p-4 border border-[#697565]/30">
+                <h3 className="font-semibold text-[#1E201E]">Sekolah Tinggi Teknologi Terpadu Nurul Fikri</h3>
+                <p className="text-sm text-[#3C3D37]">Bachelor's Degree in Information Systems</p>
+                <p className="text-xs text-[#697565] mt-1">Current Student</p>
               </div>
             </div>
 
             {/* Organizations */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                <FiUsers className="mr-2 text-green-500" /> Organizations & Roles
+              <h2 className="text-2xl font-bold text-[#1E201E] mb-4 flex items-center">
+                <FiUsers className="mr-2 text-[#697565]" /> Organizations & Roles
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
@@ -193,10 +194,10 @@ const AboutMe = () => {
                   { role: "Assistant Lecturer", org: "Software Engineering Course", period: "2025-2026" },
                   { role: "UI Designer", org: "Student Identity Management App", period: "2025-2026" },
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white dark:bg-gray-800 rounded-xl p-3 border border-gray-100 dark:border-gray-700">
-                    <h3 className="font-semibold text-sm text-gray-900 dark:text-white">{item.role}</h3>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{item.org}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.period}</p>
+                  <div key={idx} className="bg-[#ECDFCC] rounded-xl p-3 border border-[#697565]/30">
+                    <h3 className="font-semibold text-sm text-[#1E201E]">{item.role}</h3>
+                    <p className="text-xs text-[#3C3D37]">{item.org}</p>
+                    <p className="text-xs text-[#697565] mt-1">{item.period}</p>
                   </div>
                 ))}
               </div>
