@@ -7,6 +7,7 @@ import {
   FiCalendar,
   FiLayers,
   FiArrowLeft,
+  FiCheck,
 } from "react-icons/fi";
 import { useParams, useNavigate } from "react-router-dom";
 import Project2 from "../assets/images/project2/project.png";
@@ -281,11 +282,11 @@ const ProjectDetail = () => {
       description:
         "As Backend Developer, I designed and built a comprehensive financial management platform using Laravel and MySQL.",
       longDescription: [
-        "Parthafin is a comprehensive financial management platform developed for PT Parthaistic Digital Agency, designed to streamline financial operations, provide real-time insights, and leverage AI-powered analytics for data-driven decision-making. As the Backend Developer, I led the end-to-end development of the system’s backend infrastructure, ensuring scalability, security, and seamless integration with the frontend.",
+        "Parthafin is a comprehensive financial management platform developed for PT Parthaistic Digital Agency, designed to streamline financial operations, provide real-time insights, and leverage AI-powered analytics for data-driven decision-making. As the Backend Developer, I led the end-to-end development of the system's backend infrastructure, ensuring scalability, security, and seamless integration with the frontend.",
         "The platform features a robust dashboard for tracking income, expenses, and financial reports, along with an integrated AI engine for advanced financial analysis. Built with Laravel and MySQL, the system supports role-based access, automated calculations, and secure data handling—empowering finance teams to manage transactions, generate reports, and analyze financial health with precision and efficiency",
       ],
       tags: ["Laravel 12", "MySQL"],
-      technologies: ["Larevel", "MySQL", "Google AI Studio"],
+      technologies: ["Laravel", "MySQL", "Google AI Studio"],
       features: [
         "CRUD Income/Expense, Invoice, Payment Receipt, Pocket",
         "AI Analysis Financial",
@@ -346,11 +347,11 @@ const ProjectDetail = () => {
 
   return (
     <Layout title={project.title} showBack>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.button
           onClick={() => navigate("/projects")}
-          whileHover={{ x: -5 }}
-          className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 mb-6 group"
+          whileHover={{ x: -4 }}
+          className="flex items-center text-muted hover:text-accent-dark mb-8 group text-sm font-medium"
         >
           <FiArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
           Back to Projects
@@ -360,20 +361,18 @@ const ProjectDetail = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16"
         >
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="relative group"
+            transition={{ delay: 0.15 }}
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-75 group-hover:opacity-100 blur transition duration-500"></div>
-            <div className="relative overflow-hidden rounded-xl shadow-2xl h-full">
+            <div className="overflow-hidden rounded-xl border border-line h-full bg-ink">
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-full object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.src =
                     "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
@@ -383,41 +382,40 @@ const ProjectDetail = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
             className="flex flex-col justify-center"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+              <span className="px-3 py-1 bg-ink text-bg rounded-md text-xs font-mono-tech uppercase tracking-wide">
                 {project.category}
               </span>
-              <span className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                <FiCalendar className="mr-1" /> {project.year}
+              <span className="flex items-center text-muted text-sm">
+                <FiCalendar className="mr-1.5" size={14} /> {project.year}
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+            <h1 className="font-display text-3xl md:text-4xl text-ink mb-5 leading-tight">
               {project.title}
             </h1>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-muted leading-relaxed mb-8">
               {project.description}
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
               {project.technologies.map((tech, index) => (
-                <motion.span
+                <span
                   key={`${tech}-${index}`}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium shadow-sm border border-gray-200 dark:border-gray-700"
+                  className="px-3 py-1 bg-surface text-slate rounded-md text-sm font-medium border border-line"
                 >
                   {tech}
-                </motion.span>
+                </span>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               {project.githubUrl && (
                 <motion.a
                   whileHover={{ y: -2 }}
@@ -425,10 +423,10 @@ const ProjectDetail = () => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors shadow-lg"
+                  className="flex items-center px-5 py-3 bg-ink hover:bg-slate text-bg rounded-lg transition-colors text-sm font-medium"
                   aria-label="View project on GitHub"
                 >
-                  <FiGithub className="mr-2 text-lg" /> GitHub Repository
+                  <FiGithub className="mr-2" /> GitHub Repository
                 </motion.a>
               )}
               {project.liveUrl && (
@@ -438,10 +436,10 @@ const ProjectDetail = () => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all shadow-lg"
+                  className="flex items-center px-5 py-3 bg-accent hover:bg-accent-light text-ink rounded-lg transition-colors text-sm font-medium"
                   aria-label="Live Demo Project"
                 >
-                  <FiExternalLink className="mr-2 text-lg" /> Live Demo
+                  <FiExternalLink className="mr-2" /> Live Demo
                 </motion.a>
               )}
             </div>
@@ -449,20 +447,20 @@ const ProjectDetail = () => {
         </motion.div>
 
         {/* Project Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-8">
             {/* Project Overview */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
+              transition={{ delay: 0.3 }}
+              className="bg-surface rounded-xl border border-line p-6 sm:p-8"
             >
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
-                <FiLayers className="mr-3 text-blue-500" />
+              <h3 className="text-xl font-semibold text-ink mb-6 flex items-center gap-2">
+                <FiLayers className="text-accent" />
                 Project Overview
               </h3>
-              <div className="space-y-6 text-gray-600 dark:text-gray-300">
+              <div className="space-y-4 text-muted">
                 {project.longDescription.map((paragraph, index) => (
                   <p key={index} className="leading-relaxed">
                     {paragraph}
@@ -475,35 +473,23 @@ const ProjectDetail = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
+              transition={{ delay: 0.4 }}
+              className="bg-surface rounded-xl border border-line p-6 sm:p-8"
             >
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+              <h3 className="text-xl font-semibold text-ink mb-6">
                 Key Features
               </h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {project.features.map((feature, index) => (
                   <motion.li
                     key={index}
-                    whileHover={{ x: 5 }}
-                    className="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-100 dark:border-gray-600"
+                    whileHover={{ x: 4 }}
+                    className="flex items-start p-3.5 bg-bg rounded-lg border border-line"
                   >
-                    <span className="flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center mt-1 mr-3">
-                      <svg
-                        className="w-3 h-3 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
+                    <span className="flex-shrink-0 w-5 h-5 bg-accent rounded-full flex items-center justify-center mt-0.5 mr-3">
+                      <FiCheck className="w-3 h-3 text-ink" />
                     </span>
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-sm text-slate leading-relaxed">
                       {feature}
                     </span>
                   </motion.li>
@@ -517,22 +503,22 @@ const ProjectDetail = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sticky top-6"
+              transition={{ delay: 0.5 }}
+              className="bg-surface rounded-xl border border-line p-6 sticky top-24"
             >
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
+              <h3 className="text-base font-semibold text-ink mb-6 pb-3 border-b border-line">
                 Project Details
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">
+                  <h4 className="text-xs font-mono-tech uppercase tracking-wide text-muted mb-2.5">
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium"
+                        className="px-2.5 py-1 bg-bg text-slate rounded-md text-xs font-medium border border-line"
                       >
                         {tech}
                       </span>
@@ -541,70 +527,61 @@ const ProjectDetail = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">
+                  <h4 className="text-xs font-mono-tech uppercase tracking-wide text-muted mb-2">
                     Category
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-slate text-sm">
                     {project.category}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">
+                  <h4 className="text-xs font-mono-tech uppercase tracking-wide text-muted mb-2">
                     Year Completed
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-slate text-sm">
                     {project.year}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3">
+                <div className="pt-4 border-t border-line">
+                  <h4 className="text-xs font-mono-tech uppercase tracking-wide text-muted mb-3">
                     Share This Project
                   </h4>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2">
                     <motion.a
                       whileHover={{ y: -2 }}
-                      href={`https://twitter.com/intent/tweet?text=Check out ${project.title} by @maszal_08&url=${window.location.href}`}
+                      href={`https://twitter.com/intent/tweet?text=Check out ${project.title} by @maszal_08&url=${typeof window !== "undefined" ? window.location.href : ""}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                      className="p-2.5 bg-bg rounded-lg border border-line hover:border-accent/50 transition-colors"
+                      aria-label="Share on Twitter"
                     >
-                      <svg
-                        className="w-5 h-5 text-gray-600 dark:text-gray-300"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg className="w-4 h-4 text-slate" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                       </svg>
                     </motion.a>
                     <motion.a
                       whileHover={{ y: -2 }}
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${typeof window !== "undefined" ? window.location.href : ""}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                      className="p-2.5 bg-bg rounded-lg border border-line hover:border-accent/50 transition-colors"
+                      aria-label="Share on Facebook"
                     >
-                      <svg
-                        className="w-5 h-5 text-gray-600 dark:text-gray-300"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg className="w-4 h-4 text-slate" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                       </svg>
                     </motion.a>
                     <motion.a
                       whileHover={{ y: -2 }}
-                      href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title=${project.title}`}
+                      href={`https://www.linkedin.com/shareArticle?mini=true&url=${typeof window !== "undefined" ? window.location.href : ""}&title=${project.title}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                      className="p-2.5 bg-bg rounded-lg border border-line hover:border-accent/50 transition-colors"
+                      aria-label="Share on LinkedIn"
                     >
-                      <svg
-                        className="w-5 h-5 text-gray-600 dark:text-gray-300"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg className="w-4 h-4 text-slate" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                       </svg>
                     </motion.a>

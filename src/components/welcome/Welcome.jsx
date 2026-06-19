@@ -1,4 +1,3 @@
-// src/components/welcome/Welcome.jsx
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
@@ -19,9 +18,9 @@ const Welcome = () => {
   ]
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setShowInput(true), 2000)
-    const timer2 = setTimeout(() => setShowButton(true), 3500)
-    
+    const timer1 = setTimeout(() => setShowInput(true), 1400)
+    const timer2 = setTimeout(() => setShowButton(true), 2200)
+
     const roleInterval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length)
     }, 2500)
@@ -46,75 +45,66 @@ const Welcome = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1E201E] via-[#3C3D37] to-[#1E201E]">
-        {/* Dot Pattern */}
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(236,223,204,0.1) 1px, transparent 1px)`,
-            backgroundSize: '30px 30px'
-          }}
-        ></div>
-      </div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ink">
+      {/* Subtle grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage: `linear-gradient(#F7F6F2 1px, transparent 1px), linear-gradient(90deg, #F7F6F2 1px, transparent 1px)`,
+          backgroundSize: '48px 48px'
+        }}
+      ></div>
 
-      {/* Animated Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#697565] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#3C3D37] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#ECDFCC] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      {/* Soft accent glow, restrained */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px]"></div>
 
       {/* Content Container */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-        {/* Welcome Badge */}
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl mx-auto">
+        {/* Eyebrow / case file label */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6"
+          className="mb-8 flex justify-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ECDFCC]/10 backdrop-blur-sm rounded-full border border-[#ECDFCC]/20">
-            <span className="text-2xl">👋</span>
-            <span className="text-sm text-[#ECDFCC]/80">Welcome to My Digital Portfolio</span>
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 border border-bg/15 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span className="text-xs text-bg/70 font-mono-tech uppercase tracking-[0.2em]">Portfolio · 2026</span>
           </div>
         </motion.div>
 
         {/* Main Title */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="mb-4"
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+          className="mb-5"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
-            <span className="text-[#ECDFCC]">Muhammad </span>
-            <span className="text-[#697565]">
-              Fakhrizal
-            </span>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-bg">
+            Muhammad Fakhrizal
+            <br />
+            <span className="text-accent">Garnindyo</span>
           </h1>
-          <h2 className="text-[#ECDFCC]/70 text-lg sm:text-xl md:text-2xl mt-2">
-            Garnindyo
-          </h2>
         </motion.div>
 
         {/* Rotating Role */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mb-8"
+          transition={{ delay: 0.4 }}
+          className="mb-10 h-10 flex items-center justify-center"
         >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentRole}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              exit={{ opacity: 0, y: -14 }}
               transition={{ duration: 0.3 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#ECDFCC]/10 backdrop-blur-sm rounded-full border border-[#ECDFCC]/20"
+              className="inline-flex items-center gap-2"
             >
-              <span className="text-[#697565] text-xl">{roles[currentRole].icon}</span>
-              <span className="text-[#ECDFCC] text-lg sm:text-xl font-medium">
+              <span className="text-accent text-lg">{roles[currentRole].icon}</span>
+              <span className="text-bg/80 text-lg sm:text-xl font-medium tracking-wide">
                 {roles[currentRole].title}
               </span>
             </motion.div>
@@ -125,15 +115,12 @@ const Welcome = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="flex flex-wrap justify-center gap-2 mb-10"
+          transition={{ delay: 0.55 }}
+          className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-12 font-mono-tech text-xs"
         >
           {["React.js", "Next.js", "Laravel", "Express.js", "TypeScript", "Python", "TailwindCSS", "MySQL"].map((tech, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1.5 bg-[#ECDFCC]/5 backdrop-blur-sm rounded-full text-[#ECDFCC]/50 text-xs sm:text-sm hover:bg-[#ECDFCC]/10 hover:text-[#ECDFCC]/70 transition-all duration-300"
-            >
-              {tech}
+            <span key={idx} className="text-bg/40">
+              {tech}{idx < 7 && <span className="text-accent/50 ml-4">/</span>}
             </span>
           ))}
         </motion.div>
@@ -142,20 +129,20 @@ const Welcome = () => {
         <AnimatePresence>
           {showInput && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              exit={{ opacity: 0, y: -16 }}
               className="mb-6"
             >
               <div className="relative max-w-sm mx-auto">
-                <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#ECDFCC]/40" size={18} />
+                <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-bg/30" size={17} />
                 <input
                   type="text"
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Enter your name"
-                  className="w-full px-12 py-3 rounded-xl bg-[#ECDFCC]/10 backdrop-blur-sm text-[#ECDFCC] placeholder-[#ECDFCC]/30 border border-[#ECDFCC]/20 focus:outline-none focus:ring-2 focus:ring-[#697565] focus:border-transparent transition-all"
+                  className="w-full px-12 py-3.5 rounded-lg bg-bg/5 text-bg placeholder-bg/30 border border-bg/15 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all"
                   autoFocus
                 />
               </div>
@@ -167,39 +154,28 @@ const Welcome = () => {
         <AnimatePresence>
           {showButton && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
             >
               <button
                 onClick={handleEnter}
                 disabled={showInput && !userName.trim()}
-                className={`group relative px-8 py-3 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 ${
+                className={`group relative px-8 py-3.5 rounded-lg font-semibold text-sm uppercase tracking-wider overflow-hidden transition-all duration-300 ${
                   showInput && !userName.trim()
-                    ? "bg-[#ECDFCC]/10 text-[#ECDFCC]/30 cursor-not-allowed"
-                    : "bg-gradient-to-r from-[#1E201E] via-[#3C3D37] to-[#697565] text-[#ECDFCC] hover:shadow-xl hover:shadow-[#1E201E]/25"
+                    ? "bg-bg/10 text-bg/30 cursor-not-allowed"
+                    : "bg-accent text-ink hover:bg-accent-light"
                 }`}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Enter Portfolio
                   <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#3C3D37] via-[#697565] to-[#3C3D37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Motivational Quote */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 4 }}
-          className="mt-10 text-[#ECDFCC]/30 text-xs sm:text-sm"
-        >
-          "Building innovative digital solutions with modern technology"
-        </motion.p>
       </div>
     </div>
   )

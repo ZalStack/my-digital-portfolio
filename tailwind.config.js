@@ -6,55 +6,48 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        bg: "#F7F6F2",
+        surface: "#FFFFFF",
+        ink: "#0E1A2B",
+        slate: {
+          DEFAULT: "#2D3A4F",
+          light: "#465469",
+          deep: "#0E1A2B",
+        },
+        muted: "#5C6B7A",
+        line: "#DAD6CC",
+        accent: {
+          DEFAULT: "#C8862D",
+          light: "#E0A857",
+          dark: "#9C6A20",
+        },
+      },
+      fontFamily: {
+        display: ["'Libre Caslon Display'", "Georgia", "serif"],
+        sans: ["'Inter'", "system-ui", "sans-serif"],
+        mono: ["'JetBrains Mono'", "monospace"],
+      },
       screens: {
         'xs': '475px',
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',
-        'gradient-xy': 'gradient-xy 15s ease infinite',
-        'text-gradient': 'text-gradient 3s ease infinite',
-        'shine': 'shine 1.5s ease-in-out infinite',
+        'fade-up': 'fade-up 0.6s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 3s ease-in-out infinite',
       },
       keyframes: {
         'gradient-x': {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
+          '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+          '50%': { 'background-size': '200% 200%', 'background-position': 'right center' }
         },
-        'gradient-xy': {
-          '0%, 100%': {
-            'background-size': '400% 400%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '400% 400%',
-            'background-position': 'right center'
-          }
-        },
-        'text-gradient': {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
-        },
-        'shine': {
-          '0%': { transform: 'translateX(-100%) skewX(-12deg)' },
-          '100%': { transform: 'translateX(400%) skewX(-12deg)' }
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
         },
         'float': {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' }
+          '50%': { transform: 'translateY(-12px)' }
         }
       },
       backgroundImage: {

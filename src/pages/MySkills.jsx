@@ -1,112 +1,116 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Layout from '../components/common/Layout'
-import { FiCode, FiDatabase, FiLayers, FiPenTool, FiGitBranch, FiCpu, FiUsers, FiClock, FiAward, FiMessageSquare, FiServer, FiSmartphone, FiShield } from 'react-icons/fi'
+import { FiCode, FiDatabase, FiLayers, FiPenTool, FiUsers, FiClock, FiAward, FiMessageSquare, FiServer, FiShield } from 'react-icons/fi'
 
 const MySkills = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
-      icon: <FiLayers className="text-[#697565]" size={24} />,
+      icon: <FiLayers size={20} />,
       skills: [
-        { name: 'HTML5/CSS3', level: 95, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'JavaScript/TypeScript', level: 90, color: 'from-[#3C3D37] to-[#1E201E]' },
-        { name: 'React.js', level: 85, color: 'from-[#1E201E] to-[#697565]' },
-        { name: 'Next.js', level: 82, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'Tailwind CSS', level: 88, color: 'from-[#3C3D37] to-[#1E201E]' },
-        { name: 'Bootstrap', level: 85, color: 'from-[#1E201E] to-[#697565]' },
+        { name: 'HTML5/CSS3', level: 95 },
+        { name: 'JavaScript/TypeScript', level: 90 },
+        { name: 'React.js', level: 85 },
+        { name: 'Next.js', level: 82 },
+        { name: 'Tailwind CSS', level: 88 },
+        { name: 'Bootstrap', level: 85 },
       ]
     },
     {
       title: "Backend Development",
-      icon: <FiServer className="text-[#697565]" size={24} />,
+      icon: <FiServer size={20} />,
       skills: [
-        { name: 'Node.js', level: 85, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'Express.js', level: 85, color: 'from-[#3C3D37] to-[#1E201E]' },
-        { name: 'Laravel', level: 85, color: 'from-[#1E201E] to-[#697565]' },
-        { name: 'PHP', level: 85, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'Python', level: 80, color: 'from-[#3C3D37] to-[#1E201E]' },
-        { name: 'Golang', level: 70, color: 'from-[#1E201E] to-[#697565]' },
+        { name: 'Node.js', level: 85 },
+        { name: 'Express.js', level: 85 },
+        { name: 'Laravel', level: 85 },
+        { name: 'PHP', level: 85 },
+        { name: 'Python', level: 80 },
+        { name: 'Golang', level: 70 },
       ]
     },
     {
       title: "Database & Tools",
-      icon: <FiDatabase className="text-[#697565]" size={24} />,
+      icon: <FiDatabase size={20} />,
       skills: [
-        { name: 'MySQL', level: 85, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'PostgreSQL', level: 75, color: 'from-[#3C3D37] to-[#1E201E]' },
-        { name: 'MongoDB', level: 70, color: 'from-[#1E201E] to-[#697565]' },
-        { name: 'Git/GitHub', level: 85, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'Docker', level: 65, color: 'from-[#3C3D37] to-[#1E201E]' },
+        { name: 'MySQL', level: 85 },
+        { name: 'PostgreSQL', level: 75 },
+        { name: 'MongoDB', level: 70 },
+        { name: 'Git/GitHub', level: 85 },
+        { name: 'Docker', level: 65 },
       ]
     },
     {
       title: "Design & Others",
-      icon: <FiPenTool className="text-[#697565]" size={24} />,
+      icon: <FiPenTool size={20} />,
       skills: [
-        { name: 'UI/UX Design', level: 80, color: 'from-[#1E201E] to-[#697565]' },
-        { name: 'Figma', level: 78, color: 'from-[#697565] to-[#3C3D37]' },
-        { name: 'Canva', level: 85, color: 'from-[#3C3D37] to-[#1E201E]' },
-        { name: 'RESTful APIs', level: 85, color: 'from-[#1E201E] to-[#697565]' },
+        { name: 'UI/UX Design', level: 80 },
+        { name: 'Figma', level: 78 },
+        { name: 'Canva', level: 85 },
+        { name: 'RESTful APIs', level: 85 },
       ]
     }
   ]
 
   const softSkills = [
-    { name: 'Communication', icon: <FiMessageSquare className="text-[#697565]" size={20} /> },
-    { name: 'Team Work', icon: <FiUsers className="text-[#697565]" size={20} /> },
-    { name: 'Time Management', icon: <FiClock className="text-[#697565]" size={20} /> },
-    { name: 'Leadership', icon: <FiAward className="text-[#697565]" size={20} /> },
-    { name: 'Problem Solving', icon: <FiCode className="text-[#697565]" size={20} /> },
-    { name: 'Adaptability', icon: <FiShield className="text-[#697565]" size={20} /> },
+    { name: 'Communication', icon: <FiMessageSquare size={18} /> },
+    { name: 'Team Work', icon: <FiUsers size={18} /> },
+    { name: 'Time Management', icon: <FiClock size={18} /> },
+    { name: 'Leadership', icon: <FiAward size={18} /> },
+    { name: 'Problem Solving', icon: <FiCode size={18} /> },
+    { name: 'Adaptability', icon: <FiShield size={18} /> },
   ]
 
   return (
     <Layout title="My Skills" showBack>
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1E201E] mb-4">
-            Technical <span className="text-[#697565]">Expertise</span>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span className="text-xs font-mono-tech uppercase tracking-[0.2em] text-muted">Capabilities</span>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl text-ink mb-3">
+            Technical Expertise
           </h2>
-          <p className="text-lg text-[#3C3D37] max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl leading-relaxed">
             My proficiency across various technologies and development domains
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-[#ECDFCC] rounded-2xl shadow-lg overflow-hidden border border-[#697565]/30"
+              transition={{ delay: index * 0.08 }}
+              className="bg-surface rounded-xl border border-line overflow-hidden"
             >
-              <div className="p-5 bg-gradient-to-r from-[#3C3D37]/10 to-[#1E201E]/10 border-b border-[#697565]/30 flex items-center">
-                <div className="p-2 rounded-xl bg-[#ECDFCC] shadow-sm mr-3">
+              <div className="p-5 border-b border-line flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-ink text-accent">
                   {category.icon}
                 </div>
-                <h3 className="text-lg font-bold text-[#1E201E]">{category.title}</h3>
+                <h3 className="text-base font-semibold text-ink">{category.title}</h3>
               </div>
               <div className="p-5">
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium text-[#3C3D37]">{skill.name}</span>
-                        <span className="text-xs font-medium text-[#697565]">{skill.level}%</span>
+                      <div className="flex justify-between mb-1.5">
+                        <span className="text-sm font-medium text-slate">{skill.name}</span>
+                        <span className="text-xs font-mono-tech text-accent-dark">{skill.level}%</span>
                       </div>
-                      <div className="w-full bg-[#3C3D37]/20 rounded-full h-2.5 overflow-hidden">
+                      <div className="w-full bg-line rounded-full h-1.5 overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.level}%` }}
-                          transition={{ duration: 0.8, delay: 0.05 * skillIndex }}
-                          className={`h-2.5 rounded-full bg-gradient-to-r ${skill.color}`}
+                          transition={{ duration: 0.7, delay: 0.05 * skillIndex }}
+                          className="h-1.5 rounded-full bg-accent"
                         />
                       </div>
                     </div>
@@ -121,29 +125,26 @@ const MySkills = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="bg-[#ECDFCC] rounded-2xl shadow-lg p-6 border border-[#697565]/30"
+          transition={{ delay: 0.3 }}
+          className="bg-surface rounded-xl p-6 border border-line"
         >
-          <div className="flex items-center mb-6">
-            <div className="p-3 rounded-xl bg-[#3C3D37] text-[#ECDFCC] mr-3">
-              <FiUsers size={24} />
-            </div>
-            <h3 className="text-2xl font-bold text-[#1E201E]">Soft Skills</h3>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <h3 className="text-base font-semibold text-ink mb-6 flex items-center gap-2">
+            <FiUsers className="text-accent" size={20} /> Soft Skills
+          </h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
             {softSkills.map((skill, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 * index }}
-                className="flex flex-col items-center p-4 bg-[#3C3D37]/10 rounded-xl hover:bg-[#3C3D37]/20 transition-all group cursor-pointer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.08 * index }}
+                className="flex flex-col items-center gap-2 p-4 bg-bg rounded-lg border border-line hover:border-accent/40 transition-colors"
               >
-                <div className="p-3 rounded-full bg-[#ECDFCC] shadow-sm mb-2 group-hover:scale-110 transition-transform">
+                <div className="text-accent">
                   {skill.icon}
                 </div>
-                <span className="text-sm font-medium text-center text-[#1E201E]">{skill.name}</span>
+                <span className="text-xs font-medium text-center text-slate">{skill.name}</span>
               </motion.div>
             ))}
           </div>
@@ -153,18 +154,18 @@ const MySkills = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8 bg-gradient-to-r from-[#3C3D37] to-[#1E201E] rounded-2xl p-6"
+          transition={{ delay: 0.4 }}
+          className="mt-6 bg-ink rounded-xl p-6"
         >
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h3 className="text-lg font-bold text-[#ECDFCC]">Professional Certifications</h3>
-              <p className="text-sm text-[#ECDFCC]/70">Recognized by Python Institute, MySkill, and more</p>
+              <h3 className="text-base font-semibold text-bg">Professional Certifications</h3>
+              <p className="text-sm text-bg/60 mt-1">Recognized by Python Institute, MySkill, and more</p>
             </div>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-[#ECDFCC] text-[#1E201E] rounded-full text-sm font-medium shadow-sm">PCEP - Python</span>
-              <span className="px-3 py-1 bg-[#ECDFCC] text-[#1E201E] rounded-full text-sm font-medium shadow-sm">Project Management</span>
-              <span className="px-3 py-1 bg-[#ECDFCC] text-[#1E201E] rounded-full text-sm font-medium shadow-sm">Leadership Training</span>
+              <span className="px-3 py-1 bg-accent text-ink rounded-md text-xs font-medium">PCEP - Python</span>
+              <span className="px-3 py-1 bg-bg/10 text-bg rounded-md text-xs font-medium">Project Management</span>
+              <span className="px-3 py-1 bg-bg/10 text-bg rounded-md text-xs font-medium">Leadership Training</span>
             </div>
           </div>
         </motion.div>

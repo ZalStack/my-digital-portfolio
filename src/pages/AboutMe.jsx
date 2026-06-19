@@ -1,19 +1,13 @@
 // src/pages/AboutMe.jsx
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/common/Layout";
 import MyProfile from "../assets/images/profile/profile.jpg";
 import {
   FiMapPin,
   FiMail,
-  FiInstagram,
   FiGlobe,
-  FiCode,
-  FiCamera,
-  FiNavigation,
   FiDownload,
-  FiEye,
-  FiX,
   FiBriefcase,
   FiUsers,
   FiAward,
@@ -21,8 +15,6 @@ import {
 } from "react-icons/fi";
 
 const AboutMe = () => {
-  const [showPreview, setShowPreview] = useState(false);
-
   const cvPath = "/cv/CV - MUHAMMAD FAKHRIZAL GARNINDYO.pdf";
 
   const handleDownloadCV = () => {
@@ -58,63 +50,70 @@ const AboutMe = () => {
   return (
     <Layout title="About Me" showBack>
       <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Section eyebrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex items-center gap-2 mb-8"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          <span className="text-xs font-mono-tech uppercase tracking-[0.2em] text-muted">About Me</span>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Profile */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="lg:col-span-1"
           >
             <div className="sticky top-24">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#697565] to-[#3C3D37] rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                  <img
-                    src={MyProfile}
-                    alt="Muhammad Fakhrizal Garnindyo"
-                    className="w-full h-auto object-cover"
-                    onError={(e) => {
-                      e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                    }}
-                  />
-                </div>
+              <div className="relative overflow-hidden rounded-xl border border-line">
+                <img
+                  src={MyProfile}
+                  alt="Muhammad Fakhrizal Garnindyo"
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+                  }}
+                />
               </div>
 
-              <div className="mt-6 bg-[#ECDFCC] rounded-2xl shadow-lg p-6 border border-[#697565]/30">
-                <h3 className="text-lg font-bold mb-4 text-[#1E201E]">Personal Info</h3>
+              <div className="mt-6 bg-surface rounded-xl p-6 border border-line">
+                <h3 className="text-sm font-mono-tech uppercase tracking-wide text-muted mb-4">Personal Info</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
-                    <FiMapPin className="text-[#697565] mr-3 mt-0.5" />
+                    <FiMapPin className="text-accent mr-3 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-xs text-[#3C3D37]">Location</p>
-                      <p className="font-medium text-[#1E201E]">Bogor, Jawa Barat, Indonesia</p>
+                      <p className="text-xs text-muted">Location</p>
+                      <p className="font-medium text-ink">Bogor, Jawa Barat, Indonesia</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <FiMail className="text-[#697565] mr-3 mt-0.5" />
+                    <FiMail className="text-accent mr-3 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-xs text-[#3C3D37]">Email</p>
-                      <p className="font-medium text-[#1E201E] break-all">fakhrizalgarnindyo@gmail.com</p>
+                      <p className="text-xs text-muted">Email</p>
+                      <p className="font-medium text-ink break-all">fakhrizalgarnindyo@gmail.com</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <FiGlobe className="text-[#697565] mr-3 mt-0.5" />
+                    <FiGlobe className="text-accent mr-3 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-xs text-[#3C3D37]">Languages</p>
-                      <p className="font-medium text-[#1E201E]">Indonesian, English</p>
+                      <p className="text-xs text-muted">Languages</p>
+                      <p className="font-medium text-ink">Indonesian, English</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
               {/* CV Download */}
-              <div className="mt-6 bg-gradient-to-r from-[#3C3D37] to-[#1E201E] rounded-2xl p-6">
-                <h3 className="text-lg font-bold mb-2 text-[#ECDFCC]">Curriculum Vitae</h3>
-                <p className="text-sm text-[#ECDFCC]/70 mb-4">Download my comprehensive CV including professional experience, education, and skills.</p>
+              <div className="mt-6 bg-ink rounded-xl p-6">
+                <h3 className="text-sm font-mono-tech uppercase tracking-wide text-accent mb-2">Curriculum Vitae</h3>
+                <p className="text-sm text-bg/70 mb-4 leading-relaxed">Download my comprehensive CV including professional experience, education, and skills.</p>
                 <button
                   onClick={handleDownloadCV}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#ECDFCC] text-[#1E201E] rounded-xl font-semibold hover:bg-[#697565] hover:text-[#ECDFCC] transition-all"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-accent text-ink rounded-lg font-semibold hover:bg-accent-light transition-all"
                 >
                   <FiDownload /> Download CV (PDF)
                 </button>
@@ -124,47 +123,47 @@ const AboutMe = () => {
 
           {/* Right Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-2 space-y-8"
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-2 space-y-10"
           >
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-[#1E201E] mb-4">
-                Muhammad <span className="text-[#697565]">Fakhrizal Garnindyo</span>
+              <h1 className="font-display text-3xl md:text-4xl text-ink mb-4">
+                Muhammad Fakhrizal Garnindyo
               </h1>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-[#3C3D37] text-[#ECDFCC] rounded-full text-sm">Software Engineer</span>
-                <span className="px-3 py-1 bg-[#697565] text-[#ECDFCC] rounded-full text-sm">Fullstack Developer</span>
-                <span className="px-3 py-1 bg-[#1E201E] text-[#ECDFCC] rounded-full text-sm">Tech Enthusiast</span>
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className="px-3 py-1 bg-ink text-bg rounded-md text-sm font-medium">Software Engineer</span>
+                <span className="px-3 py-1 bg-surface border border-line text-slate rounded-md text-sm font-medium">Fullstack Developer</span>
+                <span className="px-3 py-1 bg-surface border border-line text-slate rounded-md text-sm font-medium">Tech Enthusiast</span>
               </div>
-              <p className="text-[#3C3D37] leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 A passionate Software Engineer and Fullstack Developer with strong expertise in both frontend and backend development using modern web technologies. Experienced in building scalable, responsive, and user-friendly web applications, while also ensuring robust system architecture and performance. Actively involved in cybersecurity communities and academic environments, combining technical expertise with leadership, communication, and problem-solving skills.
               </p>
             </div>
 
             {/* Experience Section */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1E201E] mb-4 flex items-center">
-                <FiBriefcase className="mr-2 text-[#697565]" /> Work Experience
+              <h2 className="text-xl font-semibold text-ink mb-5 flex items-center gap-2">
+                <FiBriefcase className="text-accent" /> Work Experience
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {experiences.map((exp, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="bg-[#ECDFCC] rounded-xl p-4 border border-[#697565]/30 shadow-sm hover:shadow-md transition-shadow"
+                    transition={{ delay: idx * 0.08 }}
+                    className="bg-surface rounded-xl p-5 border border-line hover:border-accent/40 transition-colors"
                   >
-                    <div className="flex flex-wrap justify-between items-start mb-2">
-                      <h3 className="font-semibold text-[#1E201E]">{exp.role}</h3>
-                      <span className="text-xs text-[#697565] flex items-center">
+                    <div className="flex flex-wrap justify-between items-start mb-2 gap-2">
+                      <h3 className="font-semibold text-ink">{exp.role}</h3>
+                      <span className="text-xs text-muted font-mono-tech flex items-center shrink-0">
                         <FiCalendar className="mr-1" size={12} /> {exp.period}
                       </span>
                     </div>
-                    <p className="text-sm text-[#3C3D37] mb-2">{exp.company}</p>
-                    <p className="text-sm text-[#697565]">{exp.description}</p>
+                    <p className="text-sm text-accent-dark font-medium mb-2">{exp.company}</p>
+                    <p className="text-sm text-muted leading-relaxed">{exp.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -172,20 +171,20 @@ const AboutMe = () => {
 
             {/* Education */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1E201E] mb-4 flex items-center">
-                <FiAward className="mr-2 text-[#697565]" /> Education
+              <h2 className="text-xl font-semibold text-ink mb-5 flex items-center gap-2">
+                <FiAward className="text-accent" /> Education
               </h2>
-              <div className="bg-[#ECDFCC] rounded-xl p-4 border border-[#697565]/30">
-                <h3 className="font-semibold text-[#1E201E]">Sekolah Tinggi Teknologi Terpadu Nurul Fikri</h3>
-                <p className="text-sm text-[#3C3D37]">Bachelor's Degree in Information Systems</p>
-                <p className="text-xs text-[#697565] mt-1">Current Student</p>
+              <div className="bg-surface rounded-xl p-5 border border-line">
+                <h3 className="font-semibold text-ink">Sekolah Tinggi Teknologi Terpadu Nurul Fikri</h3>
+                <p className="text-sm text-muted mt-1">Bachelor's Degree in Information Systems</p>
+                <p className="text-xs text-accent-dark font-mono-tech mt-2 uppercase tracking-wide">Current Student</p>
               </div>
             </div>
 
             {/* Organizations */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1E201E] mb-4 flex items-center">
-                <FiUsers className="mr-2 text-[#697565]" /> Organizations & Roles
+              <h2 className="text-xl font-semibold text-ink mb-5 flex items-center gap-2">
+                <FiUsers className="text-accent" /> Organizations & Roles
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
@@ -194,10 +193,10 @@ const AboutMe = () => {
                   { role: "Assistant Lecturer", org: "Software Engineering Course", period: "2025-2026" },
                   { role: "UI Designer", org: "Student Identity Management App", period: "2025-2026" },
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-[#ECDFCC] rounded-xl p-3 border border-[#697565]/30">
-                    <h3 className="font-semibold text-sm text-[#1E201E]">{item.role}</h3>
-                    <p className="text-xs text-[#3C3D37]">{item.org}</p>
-                    <p className="text-xs text-[#697565] mt-1">{item.period}</p>
+                  <div key={idx} className="bg-surface rounded-lg p-4 border border-line">
+                    <h3 className="font-semibold text-sm text-ink">{item.role}</h3>
+                    <p className="text-xs text-muted mt-1">{item.org}</p>
+                    <p className="text-xs text-accent-dark font-mono-tech mt-1.5">{item.period}</p>
                   </div>
                 ))}
               </div>

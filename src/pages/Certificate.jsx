@@ -135,70 +135,75 @@ const Certificate = () => {
   return (
     <Layout title="My Certificates" showBack>
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-[#1E201E] mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span className="text-xs font-mono-tech uppercase tracking-[0.2em] text-muted">Achievements</span>
+          </div>
+          <h1 className="font-display text-3xl md:text-4xl text-ink mb-3">
             My Certificates
           </h1>
-          <p className="text-lg text-[#3C3D37] max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl leading-relaxed">
             Proof of achievements and professional recognition that I have obtained
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certificates.map((certificate) => (
+          {certificates.map((certificate, idx) => (
             <motion.div
               key={certificate.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: certificate.id * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group bg-[#ECDFCC] rounded-2xl overflow-hidden shadow-md border border-[#697565]/30 hover:shadow-2xl hover:border-[#697565] transition-all duration-300"
+              transition={{ delay: Math.min(idx * 0.05, 0.5) }}
+              className="group bg-surface rounded-xl overflow-hidden border border-line hover:border-accent/50 hover:shadow-lg transition-all duration-300"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 overflow-hidden bg-ink">
                 <img
                   src={certificate.imageUrl}
                   alt={certificate.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
                     e.target.src = "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1E201E]/70 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="inline-block px-3 py-1 bg-[#697565] text-[#ECDFCC] text-xs font-semibold rounded-full shadow-md">
+                <div className="absolute bottom-3 left-3">
+                  <span className="inline-block px-2.5 py-1 bg-ink/85 text-bg text-xs font-mono-tech rounded-md backdrop-blur-sm">
                     {certificate.date}
                   </span>
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#1E201E] mb-2 leading-tight group-hover:text-[#697565] transition-colors">
+              <div className="p-5">
+                <h3 className="text-base font-semibold text-ink mb-2 leading-tight group-hover:text-accent-dark transition-colors">
                   {certificate.title}
                 </h3>
 
-                <div className="flex items-center gap-2 text-sm text-[#3C3D37] mb-2">
-                  <span className="font-semibold">Issuer:</span>
+                <div className="flex items-center gap-2 text-sm text-muted mb-2">
+                  <span className="font-medium text-slate">Issuer:</span>
                   <span>{certificate.issuer}</span>
                 </div>
 
-                <p className="text-sm text-[#697565] leading-relaxed line-clamp-2 mb-4">
+                <p className="text-sm text-muted leading-relaxed line-clamp-2 mb-4">
                   {certificate.description}
                 </p>
 
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-[#3C3D37]">
-                    Certificate ID: {certificate.id.toString().padStart(3, "0")}
+                <div className="flex justify-between items-center pt-3 border-t border-line">
+                  <span className="text-xs text-muted font-mono-tech">
+                    #{certificate.id.toString().padStart(3, "0")}
                   </span>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-xs text-[#697565] hover:text-[#1E201E] font-medium"
+                  <button
+                    className="text-xs text-accent-dark hover:text-accent font-medium"
                     onClick={() => {
                       window.open(certificate.imageUrl, "_blank");
                     }}
                   >
                     View Certificate →
-                  </motion.button>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -208,16 +213,16 @@ const Certificate = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-[#3C3D37] to-[#1E201E] p-6 rounded-2xl inline-block">
-            <p className="text-[#ECDFCC]">
+          <div className="bg-ink p-5 rounded-xl inline-block">
+            <p className="text-bg/80 text-sm">
               Total Certificates:{" "}
-              <span className="font-bold text-[#697565]">
+              <span className="font-semibold text-accent">
                 {certificates.length}
-              </span>{" "}
-              • Click "View Certificate" to see full size
+              </span>
+              {" "}· Click "View Certificate" to see full size
             </p>
           </div>
         </motion.div>
